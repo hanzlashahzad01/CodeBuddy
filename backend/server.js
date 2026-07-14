@@ -76,15 +76,10 @@ app.get('/', (req, res) => {
   res.send('CodeBuddy API is running...');
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, async () => {
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-  
-  // Try connecting to DB, catch error but don't crash if local DB isn't setup
-  try {
-    await connectDB();
-  } catch (err) {
-    console.log('MongoDB connection failed. Please ensure MongoDB is running locally or provide a valid connection string.');
-  }
+// Connect to MongoDB
+connectDB().catch((err) => {
+  console.error(err);
 });
+
+// Export app for Vercel
+module.exports = app;
