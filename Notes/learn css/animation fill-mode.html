@@ -1,0 +1,41 @@
+<html>
+		<head>
+		<title>animation fill-mode</title>
+				<style>
+				body{
+				font-family:arial,helvetica;
+				
+				}
+				#box{
+				width:150px;
+				height:150px;
+				background:black;
+				margin-left:20px;
+				animation:sample 2s 1s forwards;
+				animation-play-state:paused;
+				animation-fill-mode:both;
+				}
+				#box:hover{
+				animation-play-state:running;
+				}
+				@keyframes sample{
+				0%{background:yellow;width:250px;}
+				50%{background:green;width:350px;}
+				100%{background:red;width:450px;}
+				
+				}
+				
+
+
+
+				</style>
+		</head>
+	<body>
+<h1 style="margin-bottom:50px;">learn css</h1>
+<div id="box"></div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,92 @@
+//jb hum aik query ky indr kisi or query ko add karty hain to wo  sb query hoti ha....
+
+//method.....
+
+select * from table 1
+
+where condition
+
+column = (select column from table 2 where condition);
+
+// 1st where condition jo ha is kay baad jo column a raha ha is mia wo column likhna ha jo table 1 mia exists karta ho ga....
+
+/phr () brackets mia 2nd query likhty hain or wo query table 2ka search kary gi....1st wali parent query ha () wali sub query ha....
+
+//ye sub query baki sb queries ky sath bhi work karti ha jasiy ky insert update delete select etc...
+
+//practtice work....
+
+
+SELECT id from personal
+
+where id in (SELECT id from hello WHERE city in ("vehari","bwp"));
+
+SELECT cid from city WHERE cityname in ("lahore","multan");
+
+
+//in operrator sey 2 ya 2 sey zayada cities ka data check kar sekhty hain....
+
+//ab ye coulmn id liaya ha mia na personal waly table sey or phr where or column wo likhna ha jo personal mia exist karta ho jasy mia na id laiya ha
+
+//phr subquery start karty hain 2 table kay laiaya same process sey.... or ye jo 3 rd line ha ye optional ha do ya na do dosn't matter....
+
+//agr ap na aik ka data show karna ha means ky only 1 city sey jo belong karty hn to ye method use ho ga.....
+
+
+//method...
+
+SELECT name from personal
+
+where name = (SELECT name from hello WHERE city = "vehari");
+
+SELECT name from hello WHERE city = "vehari";
+
+
+// exists or non exists function....
+
+//exist....
+
+//method.....
+
+select * from table 1
+
+where condition
+
+exists = (select column from table 2 where condition);
+
+// agr ye jo exist ky baad wali command ha ye hum ko single record bhi shoow kary gi to tab hi  ye parent wali query ka data showw kary ga...
+
+//agr is ko kio single record bhi mmilta ha tb bhi ye parent ka sara data show kary ga otherwise nai kary ga....
+
+or non exists
+
+//is ky ult ha...
+
+//nonexist....
+
+
+select * from table 1
+
+where condition
+
+nonexists = (select column from table 2 where condition);
+
+// agr ye jo nonexist ky baad wali command ha ye hum ko kio record bhi shoow nai kary gi to tab hi  ye parent wali query ka data show kary ga...
+
+
+//practtice....
+
+SELECT name from personal
+
+where EXISTS (SELECT name from hello WHERE city in ("vehari"));
+
+
+//ab is ko record mil raha ha ye parent ka data show kary ga ab...
+
+//nonexist...
+
+SELECT name from personal
+
+where not EXISTS (SELECT name from hello WHERE city in ("vehari"));
+
+//ye ab kio data show nai kary ga...ye exist ka opposite work karta ha......

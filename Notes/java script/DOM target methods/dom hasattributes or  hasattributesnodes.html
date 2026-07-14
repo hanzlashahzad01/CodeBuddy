@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    #box{
+        border: 1px solid black;
+        width: 800px;
+        height: 400px;
+        background-color: bisque;
+        color: black;
+        padding: 10px;
+        margin: 50px;
+        text-align: justify;
+    }
+    
+</style>
+</head>
+<body>
+    <div id="box" class="abc">
+<h2>HANZLA SHAHZAD : LEARN JAVASCRIPT</h2>
+<div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio error tenetur hic, odit reiciendis ex vel tempora aliquam repellendus nobis, nisi asperiores laboriosam saepe sint ipsa! Ipsum dolores culpa quidem at non debitis praesentium dolorem itaque esse quos nemo vitae, soluta repellat laboriosam eligendi nisi dignissimos vero totam adipisci enim.</p>
+</div>
+    </div>
+
+    <script>
+        // has attributes or has attributes nodes...
+
+        // has attributes basically yr ye attributes ko check karta ha jo hum search kr rahy hoty hain agr wo
+        //attribute ho ga to ye true  print kary ga agr div mia nai ho ga to ye false print kary ga...simple
+
+        //has attribute...
+
+        // var target=document.getElementById("box");
+        // var find=target.hasAttribute("class");
+
+        // console.log(find);
+
+        //has attribute node...
+
+        //ye basicallly div mia sey hr  aik chz ko dekhta ha tag ko bhi name ko bhi even ky 
+        //sapce ko bhi or enter or comment ko bhi...agr kio chz mily gi to true print karya ga otherwise false
+// no paramter...
+
+        var target=document.getElementById("box");
+        var find=target.hasChildNodes();
+
+        console.log(find);
+
+    </script>
+</body>
+</html>

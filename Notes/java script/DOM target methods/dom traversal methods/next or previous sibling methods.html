@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outter{
+            border: 1px solid black;
+            width: 800px;
+            height: 350px;
+            background-color: tan;
+            margin: 30px;
+        }
+        #inner{
+            border: 1px solid black;
+            width: 600px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            margin-left: 10px;
+        }
+        #A{
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+       #B{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #C{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #D{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #E{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="outter"><h2>outter</h2>
+    <div id="inner">
+        <h2>inner</h2>
+        <div id="A">A</div>
+        <div id="B">B</div>
+        <div id="C">C</div>
+        <div id="D">D</div>
+        <div id="E">E</div>
+    </div>
+    </div>
+
+    <script>
+
+        //dom traversal methods....
+
+        //there are 12 methods we see one by one...
+
+   //nextElementSibling...
+    
+//    document.getElementById("C").nextElementSibling.style.background="red";
+//    var a=document.getElementById("C").nextElementSibling;
+//    console.log(a);
+
+
+//previous element sibling...
+
+// document.getElementById("A").previousElementSibling.style.background="red";
+//    var a=document.getElementById("A").previousElementSibling.innerHTML;
+//    console.log(a);
+
+   //nextSibling...
+
+   //  yr ye bhi same childnodes ki tarah hi work karta ha bus nextsibling ka bata ha ky next py
+   // kia ha space ha kio text comment ha ye phr enter  kia ha sb kuch...
+
+   //styling possible nai ha is ki bhi...
+
+   //document.getElementById("A").nextSibling.style.background="red";
+//    var a=document.getElementById("A").nextSibling;
+//    console.log(a)
+
+   //previoussibling...
+
+   
+   //  yr ye bhi same childnodes ki tarah hi work karta ha bus previoussibling ka bata ha ky previous py
+   // kia ha space ha kio text comment ha ye phr enter  kia ha sb kuch...
+
+   //styling possible nai ha is ki bhi...
+
+
+   var a=document.getElementById("C").previousSibling;
+   console.log(a)
+
+
+
+   // jis kisi ka next or previous element naiho ga us ko ye null print kary ga...
+
+    </script>
+</body>
+</html>

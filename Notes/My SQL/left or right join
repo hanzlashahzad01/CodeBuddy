@@ -1,0 +1,46 @@
+//left join means that jo data table 1 or  table 2 mia match karta ho wo show kary ga hi sath mia table 1 ka bhi data show kary ga
+//left ka...ye bhi primary or foriegn key kay sath hi use hota  ha...right join ka bhi same hi work ha wo right ki print kary ga
+// or method mia left ki jagha pr right likhna ha bus....
+
+//method...
+
+select columns
+
+from table 1
+
+left join table 2
+
+on table1.column_name = table2.column_name;
+
+//same process ha innner waly ki taraha ka...
+
+//practice work...
+
+select * from data left join city
+
+on data.city=city.city;
+
+// * sey sb ka data show kary ga....agr ap na some columns ka data  see karna ha to ye method ho ga...
+
+select d.id,d.name,d.percentage,d.age,p.gender,c.city
+
+from data d left join city c
+
+on d.city=c.city;
+
+
+select * from data d left join city c
+on d.city=c.city;
+
+
+select d.id,d.name,d.percentage,d.age,p.gender,c.city
+
+from data d left join city c
+
+on d.city=c.city
+
+where c.cityname="lahore"
+
+order by d.name;
+
+//where sey hum conditions set karty hain ky city lahore ka hi data show ho bus...or order un ko ascending order mia la sekhty hain...

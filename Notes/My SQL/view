@@ -1,0 +1,109 @@
+//view command ka use basically hum is laiya karty hain ky jo bhi data hum na likha hota agr wo hum sey delte ho jata ha to agr ap na wo data view command
+
+//mia store kiya ho ga to wo remove nai ho ga....or ap kisi time us data ko view box mia ja ky view kr skhty hain.....
+
+//jo data ap na view mia store kiya ha us data mia bhi ap changing kr sekhty ho alter command ka use kr ky.....
+
+//let see....
+
+
+//methods.....
+
+//ab jb hum kisi table mia inner join ka use 4,5 br karna ho ga to wo bhut hi complex ho jeta ha kam ye phr hum us data ko copy kr notepad mia save kr deyn
+
+//phr wahn sey copy laiyn....to wo bhut hi complex ho jeta ha kam....is laiya phr view box mia data save kr dety hain....ky hum easily us data ko chanege
+
+//bhi kr skhety hain or copy or run bhi....
+
+
+
+create view view_name
+
+as
+
+//as ky baad wo sara data jo ap na view mia store karna ho ga....
+
+
+CREATE VIEW studentdata
+AS
+SELECT id,name,city from
+personal p  inner join city c
+on p.city = c.cityname;
+
+
+SELECT * from studentdata;
+
+//ab ye view ko studentdata ky name sey mia na create kiya ha phr as ka use ky phr sara data entry karna wo ap ko chahiye ho ga baad mia....
+
+//phr SELECT * from studentdata kr ky ap data ko view bhi kr sekhty hain.....
+
+
+
+ALTER VIEW studentdata
+AS
+SELECT id,name,cityname from
+personal p  inner join city c
+on p.city = c.cityname;
+
+
+SELECT * from studentdata;
+
+
+// jo data view mia phley sey store tha agr us mia ap ko baad mia changing karni ha to ap ko alter view ka use karna ho ga.....
+
+//phr ap existing table mia changing bhi kr sekhty hain....
+
+
+
+
+create or replace VIEW studentdata
+AS
+SELECT id,name,cityname from
+personal p  inner join city c
+on p.city = c.cityname;
+
+
+SELECT * from studentdata;
+
+
+
+//ye alter ki tarha hi kam karti ha bus syntx ka diff ha alter use kr lo ya 2 hi same hain....
+
+
+
+
+RENAME TABLE studentdata
+
+to studentcourse;
+
+
+SELECT * from studentcourse;
+
+
+//ap is sey view ka name bhi replace kr skehty hain baad mia.....
+
+
+
+
+
+drop view studentcourse;
+
+SELECT * from studentcourse;
+
+
+
+//ab view delte ho gaya ha completely....
+
+
+
+
+
+
+//note......
+
+
+
+//jb bhi ap data ko view box mai save kart ho to wo data to save ho jetta ha lakin wo as a command hi run ho ga na data....
+
+
+//or aik or baat jb bhi ap view ka name save karin gy wo ap ky tables sey match nai karna chahiye wrna ye view save hi nai kary ga data ko....

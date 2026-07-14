@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>nested-flex</title>
+            <style>
+                .container{
+                    background: #eee;
+                    width:300px;
+                font-size: 20px;
+                height: 300px;
+                    margin: 50px auto 0px;
+                    padding: 10px;
+                    border: 3px solid black;
+                    display:flex;
+                    flex-direction: column;
+                    
+    
+                }
+                
+
+.item1{
+    background:orange;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+
+   
+}
+.item2{
+    background:yellow;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+}
+    .item2 > .subitem{
+        color: mediumpurple;
+        background: wheat;
+        flex-grow: 1;
+        margin: 5px;
+    }
+
+.item3{
+    background:hotpink;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+.item4{
+
+    background: purple;
+    
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+        </style>
+
+</head>
+
+        <body>
+            <h1>ch.hanzla shahzad learn css</h1>
+            <div class="container">
+            <div class="item1">one</div>
+            <div class="item2">
+<div class="subitem subitem1">A</div>
+<div class="subitem subitem2">B</div>
+<div class="subitem subitem3">C</div>
+
+
+            </div>
+            <div class="item3">three</div>
+            <div class="item4">four</div>
+            
+            
+
+
+
+
+        </div>
+
+
+        </body>
+
+
+
+
+</html>
+                    
+                   

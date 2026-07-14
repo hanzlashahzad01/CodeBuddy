@@ -1,0 +1,23 @@
+
+//ye bhi in ki tarah hi work karta ha bus is ye diff ha ky is mia ap and operotor ka bhi use kr sekhty ho...
+
+//method...
+
+select * from file
+
+where age between 20 and 40;
+
+//ye jo bhi 20 sey 40 ki age mia hn gy wo print kary ga...
+
+select * from file
+where age not between 20 and 40;
+
+//ye jo bhi 20 sey 40 ki age mia nai hn gy wo print kary ga...
+
+select * from file
+where id between 1 and 3;
+
+select * from file
+where name between "h" and "k";
+
+//ye jo is is  char sey name start hn gy bus un ko hi prinnt kary ga...

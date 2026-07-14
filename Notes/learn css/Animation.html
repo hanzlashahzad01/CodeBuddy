@@ -1,0 +1,51 @@
+<html>
+		<head>
+		<title>Animation</title>
+		 <style>
+				body{
+                    font-family:arial,helvetica;
+                    background:#eee;
+                    
+                    }
+                .card{
+                    width:300px;
+                    height:300px;
+                    background:white;
+                    margin:-150px;
+                    line-height:300px;
+                    text-align:center;
+                    font-size:40px; 
+                    box-shadow:0 0 15px rgba(0,0,0,0.1);
+                    position:absolute;
+                    left:50%;
+                    top:50%;
+                    color:#03446A;
+					/* animation-name: sample;
+					animation-duration: 2s;
+					animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);
+					animation-delay: 0s;
+					animation-iteration-count: infinite;
+					animation-direction: alternate; */
+
+
+					animation: sample 2s cubic-bezier(0.19, 1, 0.22, 1) 0s infinite alternate;
+
+				}
+				@keyframes sample{
+					0%{border-radius: 0%;}
+					25%{background-color: green;}
+					50%{background-color: yellow;}
+					100%{border-radius: 50%;background-color: tomato;color: white;}
+				}
+
+
+					
+		</style>
+</head>
+<body>
+    
+<h1 style="margin-bottom:50px;">C{ }de Buddy : CSS Animation</h1>
+<div class="card">C{ }de Buddy</div>
+
+</body>
+<html>

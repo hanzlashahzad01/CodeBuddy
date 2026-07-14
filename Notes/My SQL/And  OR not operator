@@ -1,0 +1,36 @@
+
+//and operator mia 2 conditions hoti hain or wo 2 hi true hn gi to statement run ho gi...
+
+//or mai agr aik statement bhi true hoti ha to wo run ho jata ha...
+
+//not ky case mia jo kam ho raha hota ha us ka ult hi response karta ha...
+
+//method...
+
+//and opertors...
+
+select * from file
+where age >=18 and age <=21;
+
+//or operator...
+
+select * from file
+where age >=18 or age <=21;
+
+//and or operator work together...
+
+select * from file
+where (age >=18 or age <=21) and  gender="f";
+
+//not opertors...
+
+//ye  where ky baad hi not ka use karna hota ha....
+
+select * from file
+where not city="multan";
+
+
+select * from file
+where not (city="multan" or city="lahore");
+
+//ye Student ka show karwy ga jo multan or lahore sey belong nai karty....

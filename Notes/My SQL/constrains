@@ -1,0 +1,37 @@
+
+there are 8 constrians constrians ka matble ha restriction lagna table or rows pr (1) not equal means that ap is ko empty nai chor
+
+sekhty is mia kio na kio value honi lazmi ha...(2)check(age>=18) ye check krta condition ko agr true ha to run ho ga....
+
+(3)unique means that hr aik ki info diff ho aik dosry sey same na ho...(4)Default 'lahore' agr ap city add nai karty to wo default lahore
+
+add ho jaey ga...(5) foreign key (6) primary key....
+
+practice....
+
+create table file(
+
+id int not null unique,
+
+name varchar(50) not null,
+
+age int not null check(age>=18),
+
+gender varchar(1) not null,
+
+phone varchar(12) not null unique,
+
+city varchar(40) not null default 'Islamabad'
+
+);
+
+
+insert into file(id,name,age,gender,phone,city)
+
+values
+
+(4,"ahmad",19,"M","03077374833","lahore"),
+
+(5,"azaz",19,"M","03056344833","lahore"),
+
+(6,"zainab",19,"F","03056374863","multan");

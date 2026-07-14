@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // working of for in loop...
+
+        //for in loop speacially objects kay sath hi use hota ha...
+
+        //working...
+
+        /* ap phly objects mia objects ki hr value ko alag sey print karna
+        pharta tha lakin for in loop sey ap object ki value ko aik hi daafa print 
+        karwa sekhty hain...
+
+        first we declear a object and than we use for in loop for print object
+
+        working....
+
+        fisrt we declear a variable in for in loop and than use in function
+        and then add object name and than print statement....
+
+        for(var a in person ){
+
+            document.write(person[a]);
+        
+        }
+        */
+
+        var student={
+            firstname:'salman',
+            lastname:'raza',
+            age:25,
+            email:'salman@gmail.com'
+        };
+
+        for(var key in student){
+
+            document.write(key + " : " + student[key] + "<br>");
+
+        }
+
+
+    </script>
+</body>
+</html>

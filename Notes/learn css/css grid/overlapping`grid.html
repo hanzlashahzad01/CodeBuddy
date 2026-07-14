@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>grid-overlapping</title>
+            <style>
+
+.container{
+                    background: #eee;
+                    width: 300px;
+                        
+                        margin: 50px auto 0px;
+                       display: grid;
+    grid-template-columns:repeat(2,150px);
+
+grid-template-rows:repeat(2,150px);
+                       
+                }
+
+                
+        
+
+                .item1{
+                    background: yellow;
+                    grid-column: 1/span 2;
+                    grid-row: 1/span 2;
+                    max-width: 150px;
+                    align-self: start;
+                    z-index: 2;
+            
+                }
+                .item2{
+                    background: brown;
+                    max-width: 150px;
+                    grid-column: 1/span 2;
+                    grid-row: 1/span 2;
+                    align-self: center;
+                    justify-self: center;
+                    z-index: 3;
+                    
+                }
+                .item3{
+                    background: purple;
+                    max-width: 150px;
+                    grid-column: 1/span 2;
+                    grid-row: 1/span 2;
+                    justify-self: end;
+                    align-self: end;
+                    z-index:2;
+                    
+                }
+                
+            
+        </style>
+
+</head>
+
+        <body>
+                <h1>ch.hanzla shahzad learn css</h1>
+                <div class="container">
+                <div class="item1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at consequat purus. Suspendisse quis laoreet tellus. Sed non consequat</div>
+                <div class="item2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at consequat purus. Suspendisse quis laoreet tellus. Sed non consequat</div>
+            <div class="item3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at consequat purus. Suspendisse quis laoreet tellus. Sed non consequat</div>
+            
+            
+            </div>
+
+
+        </body>
+
+
+
+
+</html>

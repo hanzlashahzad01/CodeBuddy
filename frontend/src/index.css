@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-secondary: #10B981;
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+}
+
+@layer base {
+  :root {
+    --bg: #F8FAFC; /* Slate 50 */
+    --card: #FFFFFF; /* White */
+    --text-main: #0F172A; /* Slate 900 */
+    --text-muted: #64748B; /* Slate 500 */
+    --border: #E2E8F0; /* Slate 200 */
+  }
+
+  .dark {
+    --bg: #0F172A; /* Slate 900 */
+    --card: #1E293B; /* Slate 800 */
+    --text-main: #F1F5F9; /* Slate 100 */
+    --text-muted: #94A3B8; /* Slate 400 */
+    --border: #334155; /* Slate 700 */
+  }
+
+  html {
+    font-size: 110%; /* Increase base font size globally for bigger fonts */
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card);
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

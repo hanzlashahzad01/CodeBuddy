@@ -1,0 +1,82 @@
+//basically yr ye jo union hota ye 2 tables ky data ko combine form mia show karta ha means ky aik hi table bana deyta ha....
+
+//union jo hota ha wo duplicate data show nai kary ga.....or union all duplicate data bhi show kr dey ga....
+
+//method....
+
+//is ko likhny kay kuch rules hoty hain let see....
+
+//ap ko wohi columns select karny hain jo 2 tables mai hn gy or un ki data type bhi same ho or order bhi
+
+// hn data diff ho sekhta ha lakin baki sb same hi hona chahiye...
+
+//method....
+
+SELECT name from personal
+UNION
+SELECT name from lecturer
+
+//acha ab ye 2 tables ka data mia na combine kia ha by union....ap select ky baad * bhi use kr sekhty hain hn yaad rahy data types or order etc sb same ho phr hi
+
+//work kary ga...union duplicate ko show nai kary ga....
+
+SELECT name from personal
+UNION all
+SELECT name from lecturer
+
+//union all duplicate ko bhi show kary ga....
+
+
+//practtice work....
+
+SELECT id,name, age from personal
+UNION
+SELECT id,name, age from lecturer
+
+
+SELECT id,name, age from personal where gender = "m"
+UNION
+SELECT id,name, age from lecturer where gender = "f"
+
+// where ki condition bhi use kr sekhty hain...ab ye student male show kary ga or lecturer female....
+
+
+SELECT id,name, age from personal where city ="lahore"
+UNION
+SELECT id,name, age from lecturer where city = "lahore"
+
+
+//ap subquery sey bhi city etc dekh sekhty ho....
+
+
+SELECT id,name, age from personal
+
+where city =(SELECT cityname from city where cityname= "vehari")
+
+UNION
+
+SELECT id,name, age from lecturer
+
+WHERE city = (SELECT cityname from city where cityname = "vehari")
+
+
+//ap inner join sey bhi ye sb kuch dekh sekhty ho jo subquery sey kiya ha....
+
+
+SELECT p.id, p.name, p.age, c.cityname
+
+from personal p INNER JOIN city c
+
+on p.city=c.cityname
+
+where c.cityname="vehari"
+
+UNION all
+
+SELECT l.id, l.name, l.age, ci.cityname
+
+from lecturer l INNER JOIN city ci
+
+on l.city=ci.cityname
+
+where ci.cityname="vehari"

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //objects is the advanced part of arrays...
+
+        /*in this object function we can creat array and function in a object
+        we can also enter a object in an object also*/
+
+        var a= { 
+            fname:'hanzla',
+            lname:'shahzad',
+            age:20,
+            email:'hanzla@gmail.com',
+
+            //we can creat a array in an object....
+
+            names:['bilal','usman','abuzar'],
+
+            //we can creat a functions in an array also....
+
+            salary:function(){
+                return 850000;
+            },
+
+            //creat aother function....
+
+            fullname : function(){
+                return this.fname + " " + this.lname;
+            },
+
+            /*this function object kay honor kay tor 
+            pr istamal hota ha jasiy kay is object ka honor a ha to ye a kay tor pr istamal howa ha understand.... */
+
+            //we can creat a another object in an object also....
+
+            countries:{
+                city:'bwp',
+                name:'pakistan',
+                made:1947
+
+            }
+            
+        }
+        console.log(a);
+        
+        document.write(a.countries.name);
+    </script>
+</body>
+</html>

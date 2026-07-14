@@ -1,0 +1,23 @@
+method...
+
+insert into table_name(column1,column2....)
+
+values
+
+(value1,value2....),
+(value1,value2....),
+(value1,value2....);
+
+practice....
+
+insert into hanzla(id,name,birth_date,phone)
+
+values
+
+(3,"usaman","2006-03-04","0304215340"),
+
+(4,"Ahmad","2001-02-04","0304225340"),
+
+(5,"azan","2002-02-04","0304925340");
+
+in ko jesy ap na set kia ha wesy hi likhna ha bad mia tartib sey....jesy id phley ha to nechy bhi id phley ay gi phr name to name etc...

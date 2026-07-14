@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>css-flexbox-align</title>
+            <style>
+                body{
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                #wrapper{
+                    background: #eee;
+                    margin: 50px;
+                    padding: 20px;
+                    list-style: none;
+
+
+                }
+#wrapper li{
+    display: flex;
+    padding: 5px 0px;
+    justify-content:flex-end;
+}
+#wrapper li label{
+flex:1;
+
+}
+
+@media screen and (min-width:300px) and (max-width:499) {
+    #wrapper li{
+        flex-direction: column;
+    }
+    #wrapper li input{
+    flex: 3;
+    
+}
+}
+@media screen and (min-width:500px) {
+    #wrapper li input{
+    flex: 3;
+    
+}
+}
+@media screen and (min-width:768px) {
+    #wrapper li input{
+    flex: 4;
+    
+}
+}
+@media screen and (min-width:992px) {
+    #wrapper li input{
+    flex: 6;
+    
+}
+}
+
+@media screen and (min-width:1200px) {
+    #wrapper li input{
+    flex: 8;
+    
+}
+}
+        </style>
+
+</head>
+
+        <body>
+            <h1>ch.hanzla shahzad learn css</h1>
+<form action="">
+<ul id="wrapper">
+    <li>
+<label for="">Name</label>
+<input type="text">
+</li>
+                    <li>
+                        <label for="">
+                            Class Name
+                        </label>
+                        <input type="text">
+
+                    </li>
+
+            <li>
+<label for="">Email
+
+</label>
+    <input type="email">
+
+
+            </li>
+        <li>
+            <button type="submit">save</button>
+        </li>
+
+</ul>
+
+</form>
+        </body>
+</html>

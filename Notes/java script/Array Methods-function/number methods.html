@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //number method....
+
+        //there are the seven methods of number such as given belowe....
+
+        //1): number function....
+
+        //the work of number function is that ye string ko number mia convert kar dey ga
+
+        //jo ap na string mia value ya number laiya ho ga....
+        
+        var a="55";
+
+        var b=Number(a);
+
+        document.write(b+55 +"<br>");
+
+        //2): parseint method ye without decimail number ko show karwata ha 
+
+        //ye pheli value ko hi print kary ga decimal sey phely wali yani point ya space sey pheli wali value ko....
+
+        var a=55.45;
+
+        var b=parseInt(a);
+
+        document.write(b +"<br>");
+
+        //3): parsefloat method parseint ki tarah hi work karta ha bus ye points kay baad wali values ko
+        //bhi return kar dey ga....
+
+        var a=55.45;
+
+        var b=parseFloat(a);
+
+        document.write(b +"<br>");
+
+        //4): isfinite method ye finite numbers ko check karta kay....
+
+        var a=55.45;
+
+        var b=Number.isFinite(a);
+
+        document.write(b +"<br>");
+
+        //5): isinteger method ye integer number ko check karta ha....
+        
+        //integer mean jo point kay without number ho wo integrer hota ha....
+
+        var a=55.54;
+
+        var b=Number.isInteger(a);
+
+        document.write(b +"<br>");
+
+        //6): tofixed method ye points kay baad wali value ko bhi print karta ha lakin aik limit tak
+
+        //jo hum na parameter kay through set ki hoti ha bus wahn tak hi print kary ga ye value ko only...
+
+        //i think so roundabout bhi karta ha number ko normal sa hahahha....
+
+        var a=55.454545;
+
+         var b=a.toFixed(3);
+
+        document.write(b +"<br>");
+
+        //7): toprecision method ye bhi same tofixed ki tarah hi work karta ha bus ye 
+
+        //points waly number ko full round about kar kay print karta ha....
+
+        //parameter deyna zarori ha without parameter yehi value ko as it is hi print kar deyta ha.....
+
+        var a=55.455;
+
+        var b=a.toPrecision(3);
+
+        document.write(b +"<br>");
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+//is null means that ye jo bhi table mia null value set ho gi us ko print kary ga.....
+
+//method...
+
+SELECT * FROM file
+where city is null;
+
+// ab ye jo city null ho us ko print kry ga..
+
+//is not null means that ye wo data show kary ga jo null nai ha.....
+
+SELECT * FROM file
+where city is not null;
+
+// ab ye jo city null nai ho ga us ko print kry ga..

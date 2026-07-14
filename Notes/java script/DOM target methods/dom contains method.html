@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    #box{
+        border: 1px solid black;
+        width: 800px;
+        height: 400px;
+        background-color: bisque;
+        color: black;
+        padding: 10px;
+        margin: 50px;
+        text-align: justify;
+    }
+    
+</style>
+</head>
+<body>
+    <div id="box">
+        <h1>HANZLA SHAHZAD : LEARN JAVASCRIPT</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium quas veritatis, odio assumenda provident et illo itaque molestiae ipsam ullam possimus aspernatur repudiandae, soluta rem id. Odit enim nesciunt, ex earum quod repudiandae maxime facilis ducimus voluptates provident ratione repellendus, esse vel animi minus expedita. Saepe expedita aliquam laboriosam fugit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium quas veritatis, odio assumenda provident et illo itaque molestiae ipsam ullam possimus aspernatur repudiandae, soluta rem id. Odit enim nesciunt, ex earum quod repudiandae maxime facilis ducimus voluptates provident ratione repellendus, esse vel animi minus expedita. Saepe expedita aliquam laboriosam fugit.</p>
+    
+    </div>
+
+    <script>
+        // contains method dom...
+
+        // yr contains ka basically ye hota ha ky ye value ko check krta ha jo hum search kr rahy
+        // hoty hain agr wo us mia ho gi to ye true print kary ga otherwise false print kary ga...
+
+        var element=document.getElementById("box");
+        var target=document.getElementById("abc");
+
+         var find=element.contains(target);
+
+         console.log(find);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+// like ka use hum table mia sey kisi chz ko find krny kay laiya use krty hain....for example like "a%" ab is ka mtlab ye ha ky un ka data
+//show kra dy jin ka name a sey start hota ha...
+
+//method...
+
+bhut sey like opertors hain hain likin famous 2 hi hain % or _ ....
+
+select * from file
+where name like "s%";
+
+//ab is ka matlb ha un student ka data show kry jin ka name s sey start hota ha...
+
+select * from file
+where name not like "a%";
+
+//ab is ka matlb ha un student ka data show kry jin ka name s sey start nai  hota ha...
+
+
+select * from file
+where phone  like "0309%";
+
+//ye  phone no check karta ha jin ki stating is sey hio ho...
+
+select * from file
+where phone  like "%74";
+
+//ye start py % ka matlb ye ha ky jis ky end py 74 ata hn wo print kary...
+
+select * from file
+where name like "_s%";
+
+//ab is matlb ye ha ky name ka fisrt latter nai pata lakin 2nd letter s sey start hota ha wo print karta ha...
+
+select * from file
+where name like "__s%";
+
+
+
+//ab is matlb ye ha ky name ka fisrt 2 letter nai pata lakin 2nd letter s sey start hota ha wo print karta ha...
+
+
+select * from file
+where name like "___a%";
+
+//ab is matlb ye ha ky name ka fisrt 3 letter nai pata lakin 2nd letter s sey start hota ha wo print karta ha...
+
+
+elect * from file
+where name like "s%" or name like "z%";
+
+//ab ye un ka show kry ga jin ka name ya to s sey start ha ya z sey...
+
+select * from file
+where binary name like "s%";
+
+//ye binary jo hota ye case sensitive hota ha...
+
+select * from file
+where binary name like "a%z";
+
+//ab ye un ka data show kry ga jin name a sey start or z py end hota ha...

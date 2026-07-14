@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //difference between local and global variables....
+
+        /*global variable:
+
+        global variable can be run inside the function and outside the function also....
+        */
+
+        /*local variable:
+
+        local variable can be run inside the function cannot be run outside the function....
+
+        */
+
+        var a ="hanzlashahzad"; //this is global variable
+
+        function hello()
+        {
+           
+            document.write(a + "<br>");
+        }
+        hello();
+        document.write(a +"<br>");
+
+        //local variable:
+
+        //can be declear only inside the function....
+
+        function hy()
+        {
+            var b =38937;
+            document.write(b +"<br>");
+        }
+        hy();
+        
+
+    </script>
+</body>
+</html>

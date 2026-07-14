@@ -1,0 +1,33 @@
+// update ka function basically hum value ko update karny kay laiya use krty hain...
+
+//method...
+
+update information
+set phone="12345678848"
+where id=1;
+
+// ye id 1  ka phone no change kr dey ga...agr ap where condition ka use nai karty ho to ye sb ka phone no change kr dy ga....
+
+update information
+set percentage="99"
+where id=1;
+
+
+//ab ye percentage us ki change kr dy ga....
+
+update information
+set percentage="99",age=27
+where id=1;
+
+//ap aik hi sath per age id sb kuch change kr skehty ho....
+
+update information
+set age=27
+where id in (4,5);
+
+// hum ins operator ka use bhi kr sekhty hain ab ye age change kr dey ga id 4 5 ki age ko...
+
+update information
+set age=27;
+
+without condition where ye sb ki change kr dy ga....

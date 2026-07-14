@@ -1,0 +1,49 @@
+//if statement basically aik condition ha jasey example ky laiya mia na liaya ha....jasey jis per % 33 sey kam ha wo fail ha baki pass ha....
+
+//let see...
+
+//method....
+
+SELECT id,name,percentage,
+
+if(percentage >=33,"pass","fail") as result
+
+from lecturer;
+
+//or aik hota ha case function is mai ye hota ha ky ap diff statement set kr sekhty hain like....let see....
+
+//method....
+
+SELECT id,name,percentage,
+case
+when percentage >=80 and percentage <=100 THEN "merit"
+when percentage >=60 and percentage < 80 THEN "1st division"
+when percentage >=45 and percentage < 60 THEN "2nd division"
+when percentage >=33 and percentage < 45 THEN "3rd division"
+when percentage < 33  THEN "fail"
+
+ELSE "no correct %"
+
+end as grade
+
+from lecturer;
+
+//case mia diff statements add karo gy.....or ELSE mai means ky agr kio bhi statement true na ho to ELSE chal jaye....
+
+//phr end likh kr is ko aik as name dyna hota ha....or last pr from likh kr kr table name ky kis table sey data show karna ha....
+
+
+
+update lecturer set
+percentage = (case id
+
+when 3 then 74
+when 4 then 56
+when 7 then 60
+end)
+WHERE id in(3,4,7);
+
+
+//ap update ky sath is ko update bhi kr sekhty hain.....ye bhi case ka aik or use ap ko bata deya ha ab....agr ap update ky sath where ka use nai
+
+//karty to wo sb ko change kr dey ga....

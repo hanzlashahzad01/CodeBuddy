@@ -1,0 +1,90 @@
+//(1) pi() (2) round() (3) ceil() (4) floor() (5) pow() (6) sqrt() (7) rand() (8) abs() (9) sign()
+
+//they are all called arthimatic operrators used in sql data base....
+
+// pi 3.14 value deyta ha bus....round kr ky upper digit print karta ha agr wo .5 sey above ha warna lower print kary ga....ceil alwalys upper value dy ga...floor
+
+//always down value...pow means 2 ki pow 2 hota ha 4 ye wala....sqaure root means 5 ka sqr 25 hota ha...rand hr daafa rand value dy ga 0 or 1 ky between...
+
+// abs without sign valuse dy ga means ky ap na agr - + * kio value digite ky sath di ha to ye function remove kr dy ga wo sign or simple digit show kary ga....
+
+
+//practtice.....
+
+SELECT 5 / 10 as total;
+
+SELECT 5 + 10 as total;
+
+SELECT 5 - 10 as total;
+
+SELECT 5 * 10 as total;
+
+SELECT 5 % 10 as total;
+
+//ye sb simple hi work karty hain....
+
+
+SELECT id,name,(percentage + 5) as "new percentage"
+
+from personal;
+
+// ab ye kia kary ga ye sb ki % mia 5 ko + kr dy ga....
+
+
+SELECT pi();
+
+// ye pi value dy ga 3.14...
+
+SELECT round(4.21);
+
+// agr .5 sey valuse above ho gi tb ye upper value dy ga wrna small...
+
+SELECT round(123.453,2);
+
+//ab ye . ky baad 2 digit hi print kry gi....
+
+SELECT ceil(4.23);
+
+//ye upper value dy gi....
+
+SELECT floor(4.23);
+
+
+//ye smaller value dy gi....
+
+
+SELECT pow(2,5);
+
+// 2 base ha 5 power ha...2 power 5 32 hota ha...
+
+SELECT sqrt(4);
+
+//ye squarte deyta ha...
+
+
+SELECT rand();
+
+
+//ye kio bhi rand value dy gi 0 or 1 ky between bus...
+
+SELECT id,name,percentage ,rand()
+
+from personal;
+
+
+SELECT id,name,percentage
+
+from personal ORDER BY rand();
+
+//agr kisi table ka data random show karna ho to ye method use ho ga.....
+
+
+SELECT abs(-4.54)
+
+
+//ye sign ko remove kr dy ga...
+
+
+SELECT sign(0);
+
+//agr value 0 ha to 0 print kary ga...agr value 0 sey bari ha to positive 1 print kary ga.... agr value 0 sey smaller ha to -1 show kary ga.....

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#test{
+
+    border: 1px solid black;
+    width: 450px;
+    height: 150px;
+    background-color: red;
+    margin: 10px;
+}
+    </style>
+    
+</head>
+<body>
+    <div id="test">
+
+    </div>
+    <br>
+ <button onclick="stopanimiation()">click me</button>
+    <script>
+
+        //set time out function...
+
+        //ye  sirf aik daafa hi run hota ha...
+
+        //is mai time hum mili seconds mia dety...aik second mia 1000 miliseconds hoty hain...
+
+        // ap is mia inbuilt function bana sekhty hain jesy ap addeventlistner mia karty hain...
+
+        
+        var id=setTimeout(Animation,5000);
+
+    function Animation(){
+        var target=document.getElementById("test");
+
+        target.style.background="black";
+    }
+
+    //clear time out function...
+
+    function stopanimiation()
+    {
+        clearTimeout(id);
+    }
+
+
+    </script>
+</body>
+</html>

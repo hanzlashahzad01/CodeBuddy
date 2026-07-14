@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //filter function...
+        /*filter function ka matlab ye ha kay ye jo value 
+        array ki true ho gi us ko laiy kar ye aik new array bana dey ga....*/
+        //ye bhi function kay sath hi use hota ha bus....
+
+        var numbers=[34,45,56,67,78,90];
+        document.write(numbers + "<br><br>");
+
+        var b=numbers.filter(greaterNumber);
+        document.write(b+ "<br><br>");
+
+        function greaterNumber(greatervalue){
+            return greatervalue>56;
+        }
+    </script>
+</body>
+</html>

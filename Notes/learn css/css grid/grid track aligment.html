@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>grid alignment track</title>
+            <style>
+
+.container{
+                    background: #eee;
+                    width: 700px;
+                        height: 700px;
+                        margin: 50px 0px 0px 50px;
+                       display: grid;
+                       grid-template-columns:repeat(2, 150px);
+grid-template-rows:repeat(2,120px);
+
+grid-gap:15px ;
+                    
+grid-auto-flow: row dense;
+    
+                       grid-auto-rows: 70px;
+                      justify-content: space-evenly;
+                      align-content: space-evenly;
+                }
+                .item1{
+                    background: yellow;
+                }
+                .item2{
+                    background: brown;
+                    
+                }
+                .item3{
+                    background: skyblue;
+                    grid-row: span 3;
+                }
+                .item4{
+                    background: purple;
+                }
+                .item5{
+                    background: green;
+                }
+                .item6{
+                    background: gold;
+                    grid-column: span 2;
+                }
+                .item7{
+                    background: blueviolet;
+                    
+                }
+                .item8{
+                    background: brown;
+                }
+                
+                
+                
+
+
+
+        </style>
+
+</head>
+
+        <body>
+                <h1>ch.hanzla shahzad learn css</h1>
+                <div class="container">
+                        <div class="item1">first</div>
+                        <div class="item2">second</div>
+                        <div class="item3">third</div>
+                        <div class="item4">fourth</div>
+                        <div class="item5">fiveth</div>
+                        <div class="item6">sixth</div>
+                        <div class="item7">seven</div>
+                        <div class="item8">eight</div>
+                </div>
+
+
+        </body>
+
+
+
+
+</html>

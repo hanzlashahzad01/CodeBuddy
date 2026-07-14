@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #boss{
+            padding: 20px;
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        #test{
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+            background-color: aqua;
+            padding: 20px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="boss">HANZLA SHAHZAD:LEARN JAVASCRIPT</h1>
+    <div id="test">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem laudantium fuga reiciendis perspiciatis sequi impedit hic iure cum delectus sed fugit veritatis eaque, quisquam, quia odio unde est nihil molestias facilis voluptates! Quaerat adipisci, explicabo in dolorem cupiditate voluptatum possimus laborum veniam illo ad debitis, recusandae quia. Dolore, incidunt eveniet.</p>
+    <h2>hanzlashahzad</h2>
+    
+    </div>
+    
+    <script>
+        // appendchild and insert node...
+
+ var newelement=document.createElement("h2");
+ console.log(newelement);
+
+ var newtext=document.createTextNode("this is just text");
+ console.log(newtext);
+
+ var newcomment=document.createComment("this is just comment");
+ console.log(newcomment);
+
+ 
+
+//appendchild...
+
+//apppendchild ka matlab ye hota ha ky jo createelement ha us ko creaetext ky sath join kr ky likhna...
+
+  newelement.appendChild(newtext);
+
+  document.getElementById("test").appendChild(newelement);
+
+  document.getElementById("test").appendChild(newcomment);
+
+
+  //basically ye jo appendchild hota ha ye last pr print hota ha...
+// is ka solution ky laiya aik property ati ha jis ka name ha insertbefore...
+
+//insertbefore ka matlab ha ky jo value ap na append ki ha us ko phely kasy laiy kay ana ha...
+//ye kam ha insertbefore ka
+
+  //insertbefore...
+
+  //is ky two parameter hoty hain first one is ky kon sey element ko ap na move karwana ha...
+  //second one is kis jagah pr insert karna ha...
+
+  var target=document.getElementById("test");
+
+  target.insertBefore(newelement,target.childNodes[0]);
+
+
+
+
+ 
+
+
+    </script>
+</body>
+</html>

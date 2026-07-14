@@ -1,0 +1,51 @@
+<html>
+				<head>
+				<title>z-index</title>
+				
+				<style>
+body{
+font-family:arial;
+}
+div{
+width:200px;
+height:200px;
+border:1px solid #000;
+position:absolute;
+font-size:25px;
+}
+#box1{
+		background:darkseagreen;
+		right:100;
+		bottom:50;
+        z-index:1;
+
+}
+#box2{
+		background:peachpuff;
+		top:150;
+		left:100;
+z-index:2;
+}
+#box3{
+		background:lightskyblue;
+		top:200px;
+		left:150px;
+z-index:3;
+
+}
+#box4{
+background:orange;
+top:250px;
+left:200px;
+z-index:4;
+}
+				</style>
+				</head>
+
+<body>
+			<div id="box1">A</div>
+			<div id="box2">B</div>
+			<div id="box3">C</div>
+			<div id="box4">D</div>
+</body>
+</html>

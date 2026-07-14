@@ -1,0 +1,25 @@
+//cross join ka matlab hota hota 2 columns hian or un columns ko apas mia cross multiply karwna one by one hr row sey ye hota ha
+
+//cross join ka kaam bus....
+
+//method....
+
+select * from hello cross join city;
+
+//hello table 1 ka name ha city table2 ka name ha....
+
+select * from hello , city;
+
+//hum cross join ki place pr only , bhi likh sekhty hain same work karta ha....
+
+select h.id,h.name,h.gender,h.age,c.cityname
+from hello h , city c;
+
+//agr hum limited columns ka data show karna chahity hain to phr ye method use ho ga....
+
+select h.id,h.name as Name,h.gender,h.age,c.cityname as city
+from hello h , city c;
+
+//hum as sey is column ka name bhi change kr sekhty hain....
+
+//cross join itna kahin use nai hota jitna ky inner left or rigt use hota ha.....

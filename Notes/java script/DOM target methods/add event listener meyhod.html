@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        font-family:arial helvetica impact verdana opensans;
+        background:slategray;
+        margin:0;
+        padding:0;
+        }
+        #wrapper{
+        border:0px solid red;
+        width= 100px;
+        background:white;
+        margin:0 100px 0 100px;
+        }
+        #header{
+            background:tan;
+        height:100px;
+        color:white;
+        
+        }
+        
+        #header h1{
+        padding:30px 0 0 20px;
+        }
+        #menu{
+        background:lightsalmon;
+        }
+        #menu li{
+        display:inline;
+        }
+        #menu li a{
+        display:inline-block;
+        padding:10px 13px;
+        text-decoration:none;
+        color:black;
+        }
+        #menu li a:hover{
+        background:crimson;
+        color:white;
+        }
+        #sidebar a{
+        text-decoration:none;
+        color:black;
+        }
+        #menu ul{
+        margin:0;
+        }
+        
+        
+        #content{
+        width:800px;
+        float:left;
+        min-height:400px;
+        padding:15px;
+        box-sizing:border-box;
+        }
+        
+        #sidebar{
+        background:lightblue;
+        width:200px;
+        float:right;
+        min-height:400px;
+        
+        }
+        .footer{
+        background:lightsalmon;
+        clear:both;
+        padding:5px 10px;
+        text-align:right;
+        }
+        
+        
+        
+        
+        </style>
+        
+</head>
+<body>
+
+    <div id="wrapper">
+		<div id="header" style="border: 1px solid red;" class="xyz">
+		<h1>Hanzla Shahzad</h1>
+		    </div>
+				<div id="menu">
+				<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+</div>
+		<div id="content">
+		<h2>learn CSS</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		</div>
+<div id="sidebar">
+
+<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+
+</div>
+<div class="footer">
+copyrightHanzlaShahzad@2023
+</div>
+
+</div>
+
+    <script>
+
+     //add event listener mehod...
+
+     // assign events using html dom...
+
+    //  var element;
+
+    //  document.getElementById("header").onmouseenter=xyz;
+
+    //  function xyz(){
+     
+    //     document.getElementById("header").style.background="green";
+     
+    //}
+
+    //dom add event listener method...
+
+    // there are two methods of writting this..
+
+  //  two kam aik hi event sey bhi   kr sekhty hain bahi bhut use hota ha ye property...
+
+    /* (1) document.getelementbyid().addeventlistener("click",functionName);
+
+    (2) document.getelementbyid().addeventlistener("click",function(){
+    
+    });*/
+
+    // yaad rahy is mia jb hum event call karin gy tb event ky sath on nai write karin gy...
+//first method...
+
+     var element;
+
+     document.getElementById("header").addEventListener("click",abc);
+
+function abc(){
+
+    document.getElementById("header").style.background="green";
+
+}
+
+// second method...
+    var Hanzla;
+
+    document.getElementById("header").addEventListener("click",function(){
+
+    document.getElementById("header").style.border="10px solid black"
+
+});
+
+// join kr bhi write  kr sekhty hain...
+
+// mai is mia this ka use kr sekhta hn this ka mtalab ye ha kay yehi property ko run karo jo phely enter ha...
+
+var Shahzad;
+
+document.getElementById("sidebar").addEventListener("click",bcd);
+
+document.getElementById("sidebar").addEventListener("click",function(){
+
+    this.getElementById("sidebar").style.background="tan";
+});
+function bcd(){
+    document.getElementById("sidebar").style.border="10px red solid";
+}
+
+// remove eventlistener method....
+
+        var laptope;
+
+        document.querySelector(".footer").addEventListener("mouseleave",cng);
+
+        document.querySelector(".footer").addEventListener("click",png);
+        
+        function cng(){
+            document.querySelector(".footer").style.background="green";
+        }
+        function png(){
+            document.querySelector(".footer").removeEventListener("mouseleave",cng);
+        }
+
+
+    </script>
+
+</body>
+</html>

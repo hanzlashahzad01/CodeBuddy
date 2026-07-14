@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+</style>
+</head>
+<body>
+    <ul id="list1">
+        <li class="abc">orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+        <li>Apple</li>
+
+    </ul>
+
+    <ul id="list2">
+
+        <li>Carrot</li>
+        <li>Reddish</li>
+        <li>Guava</li>
+        <li class="abc">orange</li>
+
+    </ul>
+
+    <script>
+
+        //is equal node...
+
+        //ye basically check karta ha kay value agr equal yani same same ha to ye true print kary 
+        // ga otherwise false print kary ga...
+
+        // yaad rahy same attribute ho...same name ho...meeans ky sb kuch same ho ga phr hi ye true print kary ga
+        //otherwise ye false hi print kary ga...
+
+        var target1=document.getElementById("list1").firstElementChild;
+        var target2=document.getElementById("list2").children[3];
+
+        var find=target1.isEqualNode(target2);
+
+        console.log(find);
+
+
+
+    </script>
+</body>
+</html>

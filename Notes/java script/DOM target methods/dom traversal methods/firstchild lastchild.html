@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outter{
+            border: 1px solid black;
+            width: 800px;
+            height: 350px;
+            background-color: tan;
+            margin: 30px;
+        }
+        #inner{
+            border: 1px solid black;
+            width: 600px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            margin-left: 10px;
+        }
+        #A{
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+       #B{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #C{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #D{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #E{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="outter"><h2>outter</h2>
+    <div id="inner">
+        <h2>inner</h2>
+        <div id="A">A</div>
+        <div id="B">B</div>
+        <div id="C">C</div>
+        <div id="D">D</div>
+        <div id="E">E</div>
+    </div>
+    </div>
+
+    <script>
+
+        //dom traversal methods....
+
+        //there are 12 methods we see one by one...
+
+       //firstelementchild...
+
+       // yr ye ye bus first child ko hi print kary ga...
+
+    //    document.getElementById("outter").firstElementChild.style.background="red";
+    //    var a=document.getElementById("outter").firstElementChild;
+    //    console.log(a);
+
+    //lastelementchild...
+
+    // ye last child ko target kary ga only...
+
+    // document.getElementById("inner").lastElementChild.style.background="red";
+    //    var a=document.getElementById("inner").lastElementChild;
+    //    console.log(a);
+
+       //firstchild...
+
+       //ye bhi childnode ki tarah hi work karta ha bus diference ye ha kay childnodes sb ko print kr deyta 
+       //tha lakin firstchild only first ko hi print kary ga...
+       //fisrtchild ki styling possible nai ha...
+
+    //    document.getElementById("inner").firstChild.style.background="red";
+    //    var a=document.getElementById("outter").firstChild;
+    //    console.log(a);
+
+       // lastchild...
+
+       // lastchild bhi firstchild ki tarah hi work karta ha bus lastchild ko target karta ha only...
+
+
+       //document.getElementById("B").lastChild.style.background="red";
+       var a=document.getElementById("B").lastChild;
+       console.log(a);
+
+
+
+
+
+    </script>
+</body>
+</html>

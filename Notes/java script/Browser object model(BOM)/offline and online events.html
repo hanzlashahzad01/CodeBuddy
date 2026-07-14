@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+#test{
+    border: 5px solid black;
+    width: 400px;
+    height: 250px;
+    padding: 15px;
+    margin: 15px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    </style>
+</head>
+<body> 
+    <div id="test"></div>
+
+    <script>
+
+        // offline and online events...
+
+        var target=document.getElementById("test");
+
+        window.addEventListener("online",function(){
+
+            target.innerHTML="you are online.";
+
+            target.style.backgroundColor="red";
+        });
+
+        
+        var target=document.getElementById("test");
+
+        window.addEventListener("offline",function(){
+
+            target.innerHTML="you are offline.";
+            
+            target.style.backgroundColor="yellow";
+        });
+
+
+        //navigator.onLine...navigator.offline...
+// ye navigator direct hi hum ko bata dey ga kay ap online ho ya offline with out events...
+
+//console.log(navigator.onLine);
+
+// hum is condition mai use kr sekhty hain...for example...
+
+if(navigator.onLine){
+    console.log("online");
+
+}
+else
+{
+    console.log("offline");
+}
+
+    </script>
+
+</body>
+
+</html>

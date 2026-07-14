@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        font-family:arial helvetica impact verdana opensans;
+        background:slategray;
+        margin:0;
+        padding:0;
+        }
+        #wrapper{
+        border:0px solid red;
+        width= 100px;
+        background:white;
+        margin:0 100px 0 100px;
+        }
+        #header{
+       
+        height:100px;
+        color:white;
+        
+        }
+        .xyz{
+            background:tan;
+        }
+        #header h1{
+        padding:30px 0 0 20px;
+        }
+        #menu{
+        background:lightsalmon;
+        }
+        #menu li{
+        display:inline;
+        }
+        #menu li a{
+        display:inline-block;
+        padding:10px 13px;
+        text-decoration:none;
+        color:black;
+        }
+        #menu li a:hover{
+        background:crimson;
+        color:white;
+        }
+        #sidebar a{
+        text-decoration:none;
+        color:black;
+        }
+        #menu ul{
+        margin:0;
+        }
+        
+        
+        #content{
+        width:800px;
+        float:left;
+        min-height:400px;
+        padding:15px;
+        box-sizing:border-box;
+        }
+        
+        #sidebar{
+        background:lightblue;
+        width:200px;
+        float:right;
+        min-height:400px;
+        
+        }
+        .footer{
+        background:lightsalmon;
+        clear:both;
+        padding:5px 10px;
+        text-align:right;
+        }
+        
+        
+        
+        
+        </style>
+        
+</head>
+<body>
+
+    <div id="wrapper">
+		<div id="header" style="border: 1px solid red;" class="xyz">
+		<h1>Hanzla Shahzad</h1>
+		    </div>
+				<div id="menu">
+				<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+</div>
+		<div id="content">
+		<h2>learn CSS</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		</div>
+<div id="sidebar">
+
+<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+
+</div>
+<div class="footer">
+copyrightHanzlaShahzad@2023
+</div>
+
+</div>
+
+        <script>
+            /* dom css styling methods...
+
+             there are three methods of css styling by dom...
+            
+            (1) style
+            (2) classname
+            (3) classlist*/
+
+             var element;
+
+            // //jo bhi ap css tag dom yaa javascript mia use karo gy to - highfun ka use nai karo gy or na kio 
+            // // space set karo gy bilky ap fisrt letter   capital enter karo gy bus...
+
+            document.querySelector("#header").style.backgroundColor="tan";
+            
+            element=document.querySelector("#header").style.border;
+            
+            console.log(element);
+               
+            // classname...
+        
+            // classname or classlist mia difference...
+            /* classname ap ko jo bhi ap na aik sey zayada classes add ki hain un ko string mia print kary ga
+            or jo classlist ha wo array mia print kary ga*/
+
+            
+            var programmer;
+
+            // is mia last class ki prority zayada hoti ha firrst one sey...
+
+            document.querySelector("#header").className="xyz abc ejee";
+
+            programmer=document.querySelector("#header").className;
+            
+            console.log(programmer);
+
+            // classlist method...yr ye same classname ki tararh ki work karrta ha bus ye value ko array mia print
+            //kary ga...
+
+
+            var Hanzla;
+            document.querySelector("#header").classList="xyz fefe";
+
+            Hanzla=document.querySelector("#header").classList;
+
+            console.log(Hanzla);
+
+ // classlist ky bhi two methods hoty hain...add or remove...
+ 
+
+            var Shahzad;
+
+            document.querySelector("#header").classList.add("xyz","abc","edd");
+
+            Shahzad=document.querySelector("#header").classList;
+
+            console.log(Shahzad);
+
+            //classlist remove method...
+
+            var hero;
+            document.querySelector("#header").classList.remove("xyz");
+
+            hero=document.querySelector("#header").classList;
+
+            console.log(hero);
+
+
+        </script>
+
+
+</body>
+</html>

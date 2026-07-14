@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //multiple array....
+
+        var array=[
+
+            ["ali",19,"male","bse"],
+            ["noor",20,"female","fsc"],
+            ["aresha",18,"female","ma"],
+            ["salman",22,"male","b.com"]
+    
+
+        ];
+        /*another method for calling array elements one by one....
+
+        document.write(array[0][1]); */
+
+        //check array length....
+        
+        document.write(array.length);
+        
+
+       document.write("<table border='1px' cellspacing='0'>");
+
+        for(var a=0;a<4;a++)
+        {
+
+            document.write("<tr>");
+
+            for(var b=0;b<4;b++)
+            {
+
+                document.write("<td>" + array[a][b] +"</td>");
+            
+            }
+           
+            document.write("</tr>");
+          
+        }
+        document.write("</table>");
+
+    </script>
+    
+</body>
+</html>

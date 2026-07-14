@@ -1,0 +1,48 @@
+//count function ye check karta ha ky total kitny persons ka data store ha table mia wo count kr ky print karta ha ye...
+
+//method...
+
+SELECT count(name) from information;
+
+//ye total data print kr dey ga jo table mia kitny person ka save ha...
+
+SELECT count(*) from information;
+
+//yehi kam hum * sey bhi kr sekhty hain...
+
+SELECT count(distinct city) as info from information;
+
+//ab ye distinct function doplicate cities ko remove kary ga phr count kr dy ga ky kitny cities add hain basically....or as dy kr ap kio
+//bhi name set kr sethy hain column ka...
+
+
+//max function....
+
+
+SELECT max(percentage) as info from information;
+
+//ab ye function maximum percentage print kary ga....
+
+//min function...
+
+SELECT min(percentage) as info from information;
+
+//ab ye function minimum percentage print kary ga....
+
+SELECT min(percentage) as percentage,name,city from information;
+
+//ab ye function jis ki min per ho gi us ka name or city bhi ptrint kary ga...
+
+
+//sum function....
+
+SELECT sum(percentage) as percentage,name,city from information;
+
+//ye function sum karta ha jesy mia na percentage ka sum kia ha ....
+
+//average function...
+
+
+SELECT avg(percentage) as average from information;
+
+//ab ye function average count kr ky dey ga....

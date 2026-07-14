@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>basic layout</title>
+<style>
+body{
+font-family:arial helvetica impact verdana opensans;
+background:slategray;
+margin:0;
+padding:0;
+}
+#wrapper{
+border:0px solid red;
+width= 100px;
+background:white;
+margin:0 100px 0 100px;
+}
+#header{
+background:crimson;
+height:100px;
+color:white;
+
+}
+#header h1{
+padding:30px 0 0 20px;
+}
+#menu{
+background:lightsalmon;
+}
+#menu li{
+display:inline;
+}
+#menu li a{
+display:inline-block;
+padding:10px 13px;
+text-decoration:none;
+color:black;
+}
+#menu li a:hover{
+background:crimson;
+color:white;
+}
+#sidebar a{
+text-decoration:none;
+color:black;
+}
+#menu ul{
+margin:0;
+}
+
+
+#content{
+width:800px;
+float:left;
+min-height:400px;
+padding:15px;
+box-sizing:border-box;
+}
+
+.sidebar{
+background:lightblue;
+width:200px;
+float:right;
+min-height:400px;
+
+}
+.footer{
+background:lightsalmon;
+clear:both;
+padding:5px 10px;
+text-align:right;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+<div id="wrapper">
+		<div id="header" class="abc" style="border: 1px solid red;">
+		<h1>Hanzla Shahzad</h1>
+		    </div>
+				<div id="menu">
+				<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+</div>
+		<div id="content">
+		<h2>learn CSS</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		</div>
+<div class="sidebar">
+
+<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+
+</div>
+<div class="footer">
+copyrightHanzlaShahzad@2023
+</div>
+
+</div>
+
+</body>
+
+<script>
+
+    // get and set value methods by DOM....
+
+    // get value methods....
+
+    // 1) innertext  2): innerhtml  3): getattribute  4): getattributenode  5): attributes.....
+
+    // 1): innertext only text ko hi print kary ga na kay tags ko links ko .....only text....
+
+    var element;
+
+    element=document.getElementById("content").innerText;
+
+    console.log(element);
+
+    // 2): innerhtml ye only html ko print kary ga only....
+
+    var element;
+
+    element=document.getElementById("header").innerHTML;
+
+    console.log(element);
+
+    // 3): getattribute ye attribute ka name baaty ga only....
+
+         var element;
+
+        element=document.getElementById("content").getAttribute("id");
+
+        console.log(element);
+
+        // 4): getattribute Node ye attribute ka name or value  baaty ga only....
+
+         var element;
+
+        element=document.getElementById("header").getAttributeNode("id");
+
+        console.log(element);
+// 5): attributes ye sb attributes ko bata dey ga one by one.....
+
+        var element;
+
+        element=document.getElementById("header").attributes[2].name;
+
+        console.log(element);
+
+        // set attributes methods....
+
+        // 1) innerHTML
+        // 2) innerText
+        // 3) Set Attribute
+        // 4) add attributes
+        // 5) remove attributes
+
+        var hanzla;
+
+        hanzla=document.getElementById("header").innerHTML;
+
+        console.log(hanzla);
+
+        /* baki bhi as it is same hi hain bus set waly mia hum khud sey value ko set kr sekhty hain
+        remove waly sey hum value ko remove kr sekhty hain simple....*/
+
+        //next slove krny ka dil nai kr raha good bye see you later bro....
+
+
+</script>
+
+</html>

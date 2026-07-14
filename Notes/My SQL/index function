@@ -1,0 +1,47 @@
+//jasy ky ap ki jo book hoti ha us kay starting page py book ka index deya hota ha is page pr jao gy to ye chapter ha para....
+
+//same procegger idhr bhi ha.....
+
+//basically hum index ka use searching ko fast karny kay laiya karty hain....
+
+
+//method....
+
+CREATE index index_name
+
+on TABLE_name(coulmn1,coulmn2,coulmn3,....);
+
+
+//drop index sey wo index delte ho jaye ga....
+
+drop index index_name
+
+on TABLE_name;
+
+
+// ap index ka use basically larger tables pr hota ha jin mia data 2k,3k tak store ho....
+
+// second ap ko wohi column SELECT karny hain jin pr searching zayada hoti ho gi....phr hi ye fast kam kary ga.....
+
+
+//practices....
+
+
+SELECT * from personal
+
+WHERE age >= 18;
+
+CREATE index student on personal (age);
+
+show INDEX from personal;
+
+drop INDEX studentss on personal;
+
+
+// create index sey index create hota ha ....
+
+//show sey ye pata chalta ha kt ap na aik table mia kitny indexes store kiye hain....primary or unique waly ko ye by default hi SELECT
+
+//kr laiy ga....
+
+//drop sey wo index drop ho jeta ha.....

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openWindow()">openWindow</button>
+    <button onclick="resizewindow()">Windowresize</button>
+
+    <script>
+
+        var mywindow;
+
+        function openWindow(){
+
+            mywindow=window.open("","","width=200px,height=200px,top=20px,left=50px");
+            mywindow.document.write("<p>This is jusst text.</p>");
+
+        }
+
+        // is ko mia apni hi website sey khud set nai kar sekhta other user use kar sekhty hain mia khud nai
+
+        // function resizewindow(){
+
+        //     mywindow.resizeTo(400,400);
+           
+        // }
+
+        //resizeby ye width height phely set  ki hoti ha  us mia plus kr kay resize krata ha...
+
+
+        function windowresize(){
+            mywindow.resizeBy(400,400);
+        }
+    </script>
+</body>
+</html>

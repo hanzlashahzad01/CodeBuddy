@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test{
+            font-size: 30px;
+            width: 70%;
+            padding: 30px;
+            margin: 30px;
+        }
+        #box{
+            border: 1px solid black;
+            width: 400px;
+            height: 250px;
+            padding: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>HANZLA  SHAHZAD : JAVASCRIPT</h1>
+
+    <div id="box" oncopy="copyfunction()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, aliquam facilis incidunt atque iste praesentium nam expedita aperiam sunt debitis tempore quia hic, error recusandae ex. Obcaecati quas in ad et facilis illum temporibus totam, pariatur similique. Quam dignissimos explicabo, iusto exercitationem accusamus vero corrupti consequuntur incidunt. Itaque aut dicta nisi amet quo minus tempore provident! Explicabo amet laboriosam eos minus provident, nisi necessitatibus cum autem accusantium porro commodi velit.</div>
+
+    <input type="text" id="test">
+
+    <script>
+
+        // copy paste cut events methods...
+
+        //copy...
+        var  target=document.querySelector("#test");
+
+        target.addEventListener("copy",function(){
+
+            console.clear();
+
+            target.style.backgroundColor="yellow";
+
+            console.log("you copied this text.");
+
+        });
+//cut...
+        var  target=document.querySelector("#test");
+
+        target.addEventListener("cut",function(){
+
+            console.clear();
+
+
+            target.style.backgroundColor="green";
+
+            console.log("you cut this text.");
+
+        });
+
+//paste...
+
+        var  target=document.querySelector("#test");
+
+        target.addEventListener("paste",function(){
+
+            console.clear();
+
+            target.style.backgroundColor="red";
+
+            console.log("you pasted this text.");
+
+        });
+
+        // function copyfunction(){
+
+        //     target=document.querySelector("#box");
+
+        //     target.style.backgroundColor="limegreen";
+        // }
+            
+    </script>
+</body>
+</html>

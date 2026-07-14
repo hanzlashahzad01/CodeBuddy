@@ -1,0 +1,233 @@
+// string diff operrators hoty hain jo ky below mia explian hain....
+
+//practtice....
+
+SELECT id,upper(name)as Name,percentage
+
+from personal;
+
+//ye name waly column ky sb hi names ko upper case kr dy ga....
+
+
+SELECT id,ucase(name)as Name,percentage
+
+from personal;
+
+// upper ki jagah pr ap ucase bhi likh sekhty ho same work karta ha....
+
+SELECT id,lcase(name)as Name,percentage
+
+from personal;
+
+
+//ye name waly column ky sb hi names ko lower case kr dy ga....
+
+
+SELECT id,lower(name)as Name,percentage
+
+from personal;
+
+// lcase ki jagah pr ap lower bhi likh sekhty ho same work karta ha....
+
+
+SELECT id, name, char_length(name) as characters
+
+from personal;
+
+
+//ab ye char_length ka jo function ha ye name hr name ky char ko count kr ky dy ga....
+
+
+SELECT id, concat(name,age)as name
+
+from personal;
+
+//ab ye concat name or age ko aik hi column mia likh dy ga....means combine kr dy ga....
+
+
+SELECT id, concat(name, " - " ,age)as name
+
+from personal;
+
+//ap is mia space highphone etc ka bhi use kr skhty hain....
+
+
+SELECT concat_ws(" - " , "ali" , "ahmad" , "programmer") as name;
+
+
+// ab ye concat_ws means that ye hr word sey phley jo ap na phley value ya sign dya ho ga us ko print kary ga hr word ky sath hi....
+
+
+SELECT ltrim("          ali ahmad         ") as name;
+
+
+// left ki space ko khatam kr deyta ha....
+
+
+SELECT rtrim("          ali ahmad         ") as name;
+
+
+// right ki space ko khatam kr deyta ha....
+
+
+SELECT trim("          ali ahmad         ") as name;
+
+//trim ka kam basically ye hota ky ye left or right 2 ki space ko remove kr dyta ha....
+
+
+SELECT position("ahmad" in "ali ahmad") as name;
+
+
+//ab ye position ka kaam ye hota ha ky ye jo word ap search kr rahy ho us ko find kr baty ga ky wo kidr para ha....jasy ahmad ko search kr raha hn ali ahmad mia
+
+//sey to ye mujhy 5 print kary ga kiu ky ahmad 5 pr ha....
+
+//jo word search karna wo phely likhna ha phr in use kar ky string likhna ha jis mia seysearch karna ha....
+
+
+SELECT instr("ali ahmad" , "ad") as name;
+
+
+//ye bhi position ki taraha hi work karta ha bus is mia ap in ka use nai karo gaye....
+
+
+SELECT locate("ad","ali ahmad") as name;
+
+//ye jo locate ha ye bhi position or instr ki taraha hi work karta ha aik diff ha ap is mai 3rd parametr bhi use kr slhty ho means kky kidr sey start karna ha
+
+//search karna...... bus is mai jo word search karna ha wo phley likhna ha .......phr string jis mia ow search karna ha...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//part ii....
+
+SELECT substring("good programmer in the world",6);
+
+//ab ye substring kia kam karta ha ye string mia sey ap substring deyta ha jo ap chahiye hoti ha or second parametr dy kr ap bata sekhty hain ky kis char sey search
+
+//onword ap ko string chahiye.....
+
+SELECT substr("good programmer in the world",6);
+
+ssubstr bhi same hi work karta ha substring ki taraha....
+
+SELECT substr("good programmer in the world",6,10) as name;
+
+//ab ye 3rd parametr ye bata ha ky kahn tak string ko end karna ha.....
+
+
+SELECT substr("good programmer in the world",-6,10) as name;
+
+
+// - mia value set kr sekhty ho ap.....
+
+
+SELECT mid("good programmer in the world",-6,10) as name;a
+
+
+//ye mid function bhi substring ki taraha hi kam karta ha....
+
+
+SELECT substring_index("good programmer in the world", " " ,2) as name;
+
+//substring_index ka maltab ye hota ha ky ye left side ka sring return karta ha  2nd parametr ap dyin ky kidr sey sting ko break karna ha or 3rd parmatr...
+
+//pr ky 1 sey break karna ha 2 sey means index dyna ha.....
+
+
+SELECT left("good programmer in the world" ,2) as name;
+
+
+//ab ye left sey valuue dy ga....
+
+SELECT right("good programmer in the world" ,2) as name;
+
+//ye right sey dy ga.....
+
+
+SELECT rpad("good programmer in the world" ,40,"*") as name;
+
+
+//ab ye rpad kia karta ha ye phley words ko count karta ha stinng mia sey phr jo 2nd parametr mia ap 40 digit tak phely ye string primt ho ga phr jo baki
+
+//jagah ho gi us pr padding dy dy ga jo ap na 3rd parmatr deya ho ga....
+
+SELECT rpad("good programmer in the world" ,40," abc") as name;
+
+
+//ap stirng values sey bhi padding dy selkty ho....
+
+
+SELECT space(80) as name;
+
+
+//ye bus space add karta ha itna use nai hota.....
+
+
+SELECT reverse("programmers world") as name;
+
+
+//ye string ko reverse print karta ha....
+
+SELECT replace("programmer world programmer world","world","welcome") as name;
+
+
+//ye replace ka kam karta ha agr stinr mia kio chz replace karni ho to ye use hota ha...1st string ho ga 2nd jis ko replace karna ha 3rd wo word jo ap na replace
+
+//karna ha....
+
+
+SELECT strcmp("programmer world","programmer world") as name;
+
+
+//ye 2 strings ko compare karta ha agr wo 2 sting same hain to ye 0 print kary ga....agr left wali sting greater ho gi to 1 print kary ga.....
+
+//.agr right wali sting greater ho gi to -1 print kary ga.....
+
+
+SELECT field("a","z","s","a") as name;
+
+
+//feild ka kam ye hota ha ky ye  string mia sey jo word ap search kr rahy hain agr wo ha to ye us index dy ddy ga ky kis index pr wo word para ha....
+
+// jo word ap search karna ha wo start mia hi likhna ha....
+
+SELECT field(5,1,2,3,4,5,6,7,8) as name;
+
+//ap kio numeric value bhi search kr sekhty hain.....
+
+
+SELECT find_in_set("ali","raza,usaman,bilal,ahmad,ali,haris") as name;
+
+
+//ye serach ka kam hi karat ha....bus is mia string ko set mia find karta ha....jo find karta karanan ha wo phley dyna phr aik strign ka set bana dyna ha
+
+//jsy upper mia mia na kia ha.....jo feild tha wo list mia sey check karta ha......
+
+
+SELECT format(234.7443,3) as value;
+
+
+//ye format ka kaam ye hota ha ky ap ko decimal ky baad kitny digit chahiye wo ap 2nd parametr mia do gy.....
+
+
+SELECT hex("programmer welcome") as value;
+
+
+//hex ka kam ye hota ha ky ye string ko decimal form mia convert kar dyta ye itna use nai hota....bus password etc ko secure krny kay laiya use hota ha....

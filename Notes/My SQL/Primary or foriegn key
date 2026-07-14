@@ -1,0 +1,80 @@
+
+//primary key jo hoti ha ye unique data ky sath use hoti ha...or primary key kabhi bhi null nai hoti ha...unique ko to null bhi kr sekhty
+
+//thy...lakin primary ko null nai kkr skekhty ap...or aik table mia ap aik hi primary key set kr sekhty ho jesy ky id jo ha wo sb ki unique
+
+//hoti ha to wo primary key ho gi ....unique means kio bhi duplicase na ho....
+
+//method...
+
+create table city(
+city_id int not null auto_increment,
+cityname varchar(50) not null,
+primary key (city_id)
+);
+//auto_increment sey ye khud hi increment karta jaye ga 1 1 ka....
+
+//agr kio table phley sey hi create ha us mia primary key set karni ha to ye method ho ga....
+
+//method.....
+
+alter table table_name
+add primary key (id);
+
+
+
+insert into city(cityname)
+values("lahore"),
+("multan"),
+("karachi"),
+("vehari"),
+("bwp");
+
+//ab hum na table mia values enter ki hain...
+
+
+use student;
+insert into file(id,name,age,gender,phone,city,percentage)
+values
+(50,"zainab",25,"f","1234567","islamabad",56),
+(51,"raheel",29,"m","03084736434","bwp",78),
+(52,"zoha",22,"f","0302378907","vehari",89),
+(53,"sultan",22,"m","0300003332475","multan",86);
+
+use student;
+insert into file(id,name,age,gender,phone,city,percentage)
+values
+(2,"zainab",25,"f","030232333","islamabad",56),
+(3,"raheel",29,"m","030232195986","bwp",78),
+(4,"zoha",22,"f","0302323115","vehari",89),
+(5,"sultan",22,"m","030233332475","multan",86);
+
+
+//foreign key jo hoti ha wo 2 tables ko link karti ha apas mia...foreign key in one table used to point primary key in another table...
+
+//method...
+
+create table file(
+id int not null unique,
+name varchar(50) not null,
+gender varchar(1) not null,
+phone varchar(12) not null unique,
+age int not null check(age>=18),
+city varchar(15) not null default 'Lahore',
+percentage int not null,
+primary key (id),
+foreign key (city) references city (city_id)
+
+);
+
+//ab jo city wala table tha us ki id ko primary kkey set kia ha or ye file wlay table ki id ko bhi primary set kia ha or is kky city ko foreign
+
+//key set kia ha is sey ab kia ho ga jo ye file wala table ha is mia jo cities hain ye ab city ka name show nai karwy ga un ki id dy ga...
+
+
+//agr kio table phley sey create ha to ye method ho ga....
+
+//method...
+
+alter table table_name
+add foreign key (city) references city(id);

@@ -1,0 +1,43 @@
+//order by jo hota ha basically ye data ko ascending order mia show karwta ha or decending mai bhi show karwta ha....
+
+//method...
+
+SELECT * FROM file
+order by id;
+
+//ye id ko ascending order mia kr dey ga....by default ye ascending hi show krta ha...
+
+
+SELECT * FROM file
+order by name desc;
+
+//ye ab descending mia hsow kary ga data ko....
+
+SELECT * FROM file
+where city = "multan"
+order by name desc;
+
+//ab mia in ko where condition ky sath print karta hn...
+
+SELECT * FROM file
+order by name,age;
+
+//ye first waly ko hi phley run kary ga 2nd ko nai kary ga....
+
+//Distinct function....
+
+//is ka matlb hota ha ky ye duplicase ko khatam karta ha means jo chz double hoti ha us ko single kr ky print karta ha....
+
+//method....
+
+SELECT distinct age FROM file;
+
+//ab ye jo age double thi un ko remove karta ha...
+
+SELECT distinct city FROM file;
+
+//same city ko bhi...
+
+SELECT distinct city FROM file order by city;
+
+//ab ye  city ko order form mia kr dey ga...ap together bhi in properties ka use kr sekhty hain...

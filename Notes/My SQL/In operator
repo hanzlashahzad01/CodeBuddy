@@ -1,0 +1,29 @@
+//in operator ka use hum tab karty hain jb hum na multiple recorders check karny hn aik hi column mai...
+
+//is sey phley hum na and or ka use kia ye bhi same hi ha lakin and or sey statement thori lenthy ho jati ha lakin in sey easy ho jate ha....
+
+//method...
+
+select * from file
+where age in (18,19);
+
+//ye ab un ka data show kr raha ha jin ki age 18 or 19 ky bech mia ha...
+
+//not kay sath use...
+
+select * from file
+where age not in (18,19);
+
+//ye ab un ka data show kr raha ha jin ki age 18 or 19 ky bech mia nai ha...
+
+select * from file
+
+where city in ("islamabad","multan");
+
+select * from file
+where city not in ("islambad","multan");
+
+select * from file
+where id in (1,3,5);
+
+// ye id 1,3,5 ka data show kry ga...

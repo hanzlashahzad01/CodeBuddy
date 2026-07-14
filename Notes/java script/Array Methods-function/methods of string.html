@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //methods of strings
+
+        /* there are the 22 methods of string they are explain below...
+        */
+
+        // 1): length method ye string ki length bata ha....
+        
+        var a="Hanzla is a Great Programmer";
+
+        var b=a.length;
+
+        document.write(b + "<br>");
+
+        // 2):tolowercase method ye string ko lowercase mia print kary ga simply....
+
+
+        var a="Hanzla is a Great Programmer";
+
+        var b=a.toLocaleLowerCase();
+
+        document.write(b + "<br>");
+
+         // 3):touppercase method ye string ko uppwercase mia print kary ga simply....
+
+         var a="Hanzla is a Great Programmer";
+
+         var b=a.toUpperCase();
+
+          document.write(b + "<br>");
+
+          // 4):include method ye string mia value ko check karta ha kay ye string mia ha bhi kay nai....
+
+          // ye casesensitive hota ha....
+
+          var a="Hanzla is a Great Programmer";
+
+         var b=a.includes(a);
+
+          document.write(b + "<br>");
+
+          // 5): startswith method means ye string ko start sey check karta ha kay value is mia ha bhi kay nai...
+          
+          var a="Hanzla is a Great Programmer";
+
+         var b=a.startsWith("a");
+
+          document.write(b + "<br>");
+
+           // 5): endsswith method means ye string ko end sey check karta ha kay value is mia ha bhi kay nai...
+          
+
+           var a="Hanzla is a Great Programmer";
+
+            var b=a.endsWith("Programmer");
+
+             document.write(b + "<br>");
+
+// 6): search method means ye string mia sey world ko search kary ga or phr ap ko us ka index bata dey ga ye kay world kider para ha....
+             
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.search("Programmer");
+
+             document.write(b + "<br>");
+
+// 7): match method means that ye string mia same world jo ap search kar rahy ho us ko laiy kr aik new string bana dey ga ye....
+
+// ap is ko regular command kay sath use kar sekhty hain....
+
+                var a="Hanzla is is is a Great is Programmer";
+
+                var b=a.match(/is/g);
+
+                document.write(b + "<b>");
+
+ // 8): indexof method means ye string mia sey world ka index ap ko batay ga kay world kis index pr ha.....
+ 
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.indexOf("Programmer");
+
+             document.write(b + "<br>");
+ 
+// 9): lastindexof method means ye string mia sey world ka index ap ko batay ga kay world kis index pr ha.....
+ // ye last sey start kary ga index ko count karna....
+
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.lastIndexOf("Great");
+
+             document.write(b + "<br>");
+
+//10): replace method agr ap na string mia sey kisi world ko replace karna ho us ki jagaha pr....
+
+            var a="Hanzla is a Great Programmer";
+
+            var b=a.replace("Great","Good");
+
+             document.write(b + "<br>");
+
+//11): trim method ye extra spaces ko remove karta ha jo string kay start or end mia hoti hain.....
+
+         var a="        Programmer          ";
+
+          var b=a.trim();
+             
+           alert(b);
+
+//12): charAt method hum is ko world ka index deyin gy or hum ko world search kar kay print kar dey ga....
+//jb is ko world nai mily ga jo string mia nai ho ga to ye khuch nai print kary ga.....
+
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.charAt(12);
+
+             document.write(b + "<br>");
+
+//13): charcodeAt method hum is world ka index deyin gy or ye hum ko us ka askayi code dey ga....
+//askayi code table net pr para ha....
+
+
+            var a="Hanzla is a Great Programmer";
+
+            var b=a.charCodeAt(0);
+
+             document.write(b + "<br>");
+
+//14): fromcharcode method ye string kay andr find nai kary ga khune kay ye aik inbulit function ha ye jo 
+//bhi write karin wo ye keyboard ka mini digit print kary ga....
+
+
+            var b=String.fromCharCode(37);
+
+             document.write(b + "<br>");
+
+//15): concat method ye string two ya two sey zayada string ko collect kar kay print karta ha aik hi string mia
+
+
+                var a="Hanzla is a Great Programmer";
+
+                var b=" in pakistan";
+
+                var h=" Insha Allah";
+
+                var c=a.concat(b,h);
+
+                document.write(c + "<br>");
+
+//16): split method ye string ko break kr kay aik array mia concert kry ga.....
+//ye bhi bahi case sensitive hota.....
+
+            var a="Hanzla is a Great Programmer";
+
+            var b=a.split("a");
+
+            document.write(b + "<br>");
+
+//17): repeat method ye string ko repaet karta ha as you wish....
+
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.repeat(5);
+
+            document.write(b + "<br>");
+
+//18): slice method ye string mia sey kisi value ko pick karna ho....
+//slice(start,end) enter two parameters.... 
+
+var a="Hanzla is a Great Programmer";
+
+            var b=a.slice(6,17);
+
+            document.write(b + "<br>");
+
+//19): substr method ye bilkul slice ki tarah hi work karta ha....
+
+var a="Hanzla is a Great Programmer";
+
+            var b=a.substr(6,17);
+
+            document.write(b + "<br>");
+
+//20): substring method ye as it is slice ki tarah hi work karta ha.....
+//ye 0 index sey start ho ga last digit jo ap na enter kia ha us sey phly tak print kary ga....
+
+             var a="Hanzla is a Great Programmer";
+
+            var b=a.substring(6,17);
+
+            document.write(b + "<br>");
+
+//21): tostring method ye numeric value ko string mia print kary ga....
+             
+            var a=90;
+            
+            var b=a.toString();
+
+            document.write(b + 30 +"<br>");
+
+//22): valueof method ye default method hota....
+
+            var a="Hanzla is a Great Programmer";
+
+            var b=a.valueOf();
+
+            document.write(b + "<br>");
+
+    </script>
+</body>
+</html>

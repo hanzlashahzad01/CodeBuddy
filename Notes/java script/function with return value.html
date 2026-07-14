@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //function with return value....
+
+          function fullname(fname="hanzla",lname="shahzad")
+          {
+            var a=fname +" - "+lname;
+
+            return a;
+          }
+          var fn = fullname("hanzla","shahzad");
+          document.write(fn);
+          document.write("<br>");
+
+          //example....
+
+          //sum of three books marks....
+
+          function sum(math,english,computer)
+          {
+            var s =math+english+computer;
+
+            return s;
+          }
+
+          //calculate percentage of these three subjects....
+
+          function percentage(tt)
+          {
+            var per = tt/300*100;
+            document.write(per);
+          }
+          var total = sum(25,30,40);
+          percentage(total);
+
+          //we can write these function in a one function also....
+
+
+    </script>
+</body>
+</html>

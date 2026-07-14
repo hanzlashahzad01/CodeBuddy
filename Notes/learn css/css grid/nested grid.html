@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>nested grid</title>
+            <style>
+
+.container{
+                    background: #eee;
+                    width: 700px;
+                        
+                        margin: 50px 0px;
+                       display: grid;
+                       grid-template-columns:repeat(2, 1fr);
+grid-template-rows:repeat(2,120px);
+
+                       
+    grid-gap:10px ;
+                       
+                }
+                .item1{
+                    background: yellow;
+                }
+                .item2{
+                    background: brown;
+                    
+                }
+                .item3{
+                    background: purple;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap:10px;
+
+                }
+                .item3 div{
+                    background: #fff;
+                    color:red;
+                    padding:10px;
+                    margin-left: 
+                    10px;
+                }
+                .item4{
+                    background: skyblue;
+                }
+                
+                
+
+
+
+        </style>
+
+</head>
+
+        <body>
+                <h1>ch.hanzla shahzad learn css</h1>
+                <div class="container">
+                        <div class="item1">first</div>
+                        <div class="item2">second</div>
+                        <div class="item3">
+                            <div class="subitem1">A</div>
+                            <div class="subitem2">B</div>
+                            <div class="subitem3">C</div>
+
+                        </div>
+                        <div class="item4">fourth</div>
+                        
+                </div>
+
+
+        </body>
+
+
+
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outter{
+            border: 1px solid black;
+            width: 800px;
+            height: 350px;
+            background-color: tan;
+            margin: 30px;
+        }
+        #inner{
+            border: 1px solid black;
+            width: 600px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            margin-left: 10px;
+        }
+        #A{
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+       #B{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #C{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #D{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #E{
+            
+            border: 1px solid black;
+            background: #eee;
+            color: black;
+            width: 90px;
+            height: 60px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="outter"><h2>outter</h2>
+    <div id="inner">
+        <h2>inner</h2>
+        <div id="A">A</div>
+        <div id="B">B</div>
+        <div id="C">C</div>
+        <div id="D">D</div>
+        <div id="E">E</div>
+    </div>
+    </div>
+
+    <script>
+
+        //dom traversal methods....
+
+        //there are 12 methods we see one by one...
+
+       // children...
+       // ye parent ky all childrens ko print karta ha...
+
+       document.getElementById("inner").children[3].style.background="tan";
+       var a=document.getElementById("inner").children[3];
+       console.log(a);
+
+       //childnodes...
+       // ye bhi children ki tarah hi work karta ha bus is mai children tags ko hi parent karta tha matlab 
+       // ye ky children ko hi lakin childnode ye tags comments spaces sb kuch print kar deyta ha...
+
+      // document.getElementById("inner").children[3].style.background="tan";
+    //    var a=document.getElementById("inner").childNodes;
+    //    console.log(a);
+
+
+
+    </script>
+</body>
+</html>

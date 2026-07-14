@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #test{
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            background: pink;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+
+    <script>
+
+        // mouse button methods...
+
+        // first of all button ky 3 funtion hain agr ap left button ko click karty hain to ye 0 print karta ha
+        //middle button pr 2 print karta ha right pr ye 3 print karta ha...
+
+        var target=document.querySelector("#test");
+
+        target.addEventListener("mousedown",function(e){
+
+            console.clear();
+
+            var text=e.button;
+            
+            var color;
+           
+
+            switch (text) {
+                case 0:
+                    color="green";
+                    break;
+                    case 1:
+                    color="blue";
+                    break;
+                    case 2:
+                    color="red";
+                    break;
+                default:
+                    color="pink";
+                    break;
+            }
+            target.style.backgroundColor=color;
+
+              console.log(text);
+        });
+    </script>
+</body>
+</html>

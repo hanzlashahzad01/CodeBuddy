@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //slice and splice function....
+
+        var a=["hanzla","alisha","aresha","umer"];
+
+        document.write(a + "<br><br>");
+
+        //slice function....
+
+        /* the meaning of slice is to select
+         aik ya aik sey zayada varaible ko hum given array sey laiy kar aik new arry bana deyta ha....
+         method of write this
+         slice(start , end )
+         slice(1) akli aik value bhi dey sekhty ho ap....
+         hum negative mia bhi value dey skhty hain....*/
+
+         var b=a.slice(1,4);
+
+         document.write(b + "<br><br>");
+
+         //splice function....
+    
+         /* splice function ka matlab ye ha kay 
+         aik array kay ander hum kio new  value ko add kar sekhty hain kisi bhi place pr...
+         method of write this
+         splice(start,delete,add)*/
+
+         a.splice(1,2,"hero");
+
+         document.write(a  + "<br><br>");
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

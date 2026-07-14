@@ -1,0 +1,68 @@
+//the group by clause is used in conjection with the SELECT statement and aggregate functions to group  rows together by common column
+
+//values....
+
+//aggregate functions means that sum count min max functions jo hum na phley kiye hain...
+
+// is ko hum aik table ky saty bhi use kar sekhty hain...or inner join ky sath bhi use kr sekhty hain 2,3,4 tables kay laiya....
+
+
+
+//ye inner join ky sath bhi use kr sekhty hain hum...
+
+//method....
+
+select * from tabel 1 inner join table 2
+
+on table 1.column_name=table 2.column_name
+
+where condition
+
+GROUP by column_name();
+
+//yr basically group by ka use hum is laiya karty hain jasiy ye for example mia na ki ha below mia  ye ab city count kary ga
+
+// ky kon sey student kis city sey aty hain total count kar ky bataye ga....
+
+//method....
+
+//practice work...
+
+use student;
+
+SELECT city, count(city) as total
+
+from personal
+
+where age >=18
+
+GROUP BY city
+
+
+ORDER BY city;
+
+//where condition ka use hum GROUP by sey phely deyin gaye or order by ko group by kay baad...condition kay bina bhi ap run kr skehty ho...
+
+
+//having caluse is ko hum group by kay sath hi use karty hain only....ye jo hum na new data print kiya us pr condition check karta ha
+
+//means ky where condition ki traha....
+
+//method...
+
+//group by kay baad having ka use karty hain... yr ye sb tables ky sath use nai hoti bus ye jo group by hum result dy ga us pr
+
+//hum having ka use karin gaye bus....
+
+for example...
+
+use student;
+SELECT city, count(city) as total
+from personal
+GROUP BY city
+HAVING count(city) > 2
+ORDER BY city;
+
+//ab ye group by ky  result pr condition set ki ha hum na ky un student ka data show kary jo students aik sey city sey zayada aty hain means
+
+// kay 2 sey zayada...

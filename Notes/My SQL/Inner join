@@ -1,0 +1,54 @@
+// inner join means that select records that have matching values in both tables....means ky aik table ki values ko 2 table sey matching
+
+//karta ha jo match ho ga wo print kr dy ga...ye foriegn or primary key kay sath use hoty hain...
+
+//method....
+
+select columns
+
+from table 1
+
+inner join table 2
+
+on table1.column_name = table2.column_name;
+
+//column sey column ko select karin gaye * sey all data print hota ha....from sey table 1 ka name deyin gaye...phr innner join  ka use karin
+
+//gaye phr table2 ka name phr on table1 ka column name jo ap na match karna ha wo ap ka foriegn key ho ga
+
+//phr = ka sign phr table 2 ka column name wo ap ki primary key ho gi...
+
+
+//method...
+
+select * from data join city
+on data.city=city.city;
+
+// * sey sb ka data show kary ga....agr ap na some columns ka data  see karna ha to ye method ho ga...
+
+
+select d.id,d.name,d.percentage,d.age,p.gender,c.city
+
+from data d inner join city c
+
+on d.city=c.city;
+
+
+select * from data d join city c
+on d.city=c.city;
+
+
+//c or d is ky as names hain short form...no change occure...
+
+
+select d.id,d.name,d.percentage,d.age,p.gender,c.city
+
+from data d inner join city c
+
+on d.city=c.city
+
+where c.cityname="lahore"
+
+order by d.name;
+
+//where sey hum conditions set karty hain ky city lahore ka hi data show ho bus...or order un ko ascending order mia la sekhty hain...

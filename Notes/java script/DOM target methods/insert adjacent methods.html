@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #test{
+            width: 800px;
+            height: 200px;
+            background-color:tan;
+            padding: 10px;
+            margin: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corporis, earum dolore perferendis accusantium aperiam commodi sint sapiente veritatis consequatur natus omnis minus sit, quos iste nihil doloremque blanditiis placeat deserunt ratione. Inventore quibusdam voluptate quae sed sit quam hic natus atque suscipit, repellat voluptatem quos asperiores neque dolore nulla?</p>
+    </div>
+
+    <script>
+        // insert adjacent methods...
+
+        //in ka kaam bhi append karna hi hota...ye creat or append dono hi karty hain...
+
+        // there are three methods...
+
+    // (1) insertadjacent element (2) insertadjacent html (3) insertadjacent text
+
+    //or inki 4 position hoti hain kay kahn pr value add karni ha...
+
+    // (1) beforebegin (2) afterbeing (3) beforebeing (4) afterend
+
+
+    //insert adjacent element...two parameter hoty hain aik ye ka kahn pr append karna ha 
+    //dosar ye ky kis ko append karna ha...
+
+    // var newelement=document.createElement("h2")
+
+    // var newtext=document.createTextNode("This is just heading");
+
+    // newelement.appendChild(newtext);
+
+    // console.log(newelement);
+
+    // var target=document.querySelector("#test");
+
+    // target.insertAdjacentElement("afterbegin",newelement);
+
+    //insert adjacent html...
+
+   
+    // var target=document.querySelector("#test");
+
+    // var newelement="<h2>This is just heading</h2>";
+
+    // target.insertAdjacentHTML("beforebegin",newelement);
+
+    //inser adjacent text...
+
+    var target=document.querySelector("#test");
+
+    var newelement="This is just heading";
+
+    target.insertAdjacentText("afterend",newelement);
+
+
+
+
+    </script>
+</body>
+</html>

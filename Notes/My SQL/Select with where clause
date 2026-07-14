@@ -1,0 +1,40 @@
+select ka use hum is laiya karty hain agr ap na table mai sey only 3 ya 2 etc columns ka data dekhna hon means ky selected data jo
+
+ap select kia hota ha bus wohi phr show hota ha
+
+select * kr  ky ap sary columns ka data show karwa sekhty ho....
+
+method....
+
+select * from hanzla;
+
+ye sara data show kr dey ga...
+
+select id,name,phone from hanzla;
+
+agr ap  id name phone dekhna chahity ho ya or selected part to ye method ho ga...
+
+select id as ID, name as Student, phone from hanzla;
+
+ye as ka use kr ap name mia  change la skehty hain jesy id tha mia na capital kr deya us ko...
+
+where clause basically aik condition ha ye jb ap na un Student ka data dekhna ho jin ki age 18 sey zayada ha ya un ka jo female hain
+
+ya un ka jo aik hi city sey belong krty hain etc...is mai bhi opertors use hain condition wlay hi =  > < != etc
+
+method...
+
+select * from hanzla
+where gender ="m";
+
+ye sirf un ka print kary ga jo male hain female ka print nai kary ga...
+
+select * from hanzla
+where age<18;
+
+ye age check kary ga 18 sey greatter wlayy print kary ga only...
+
+select * from hanzla
+where city !="lahore";
+
+ye unn show kary ga jo lahore sey belong nai karty...

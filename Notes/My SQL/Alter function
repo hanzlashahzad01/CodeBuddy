@@ -1,0 +1,112 @@
+
+//there many uses of alter command are explain below.....
+
+//let seee na denjoy them all.....
+
+
+//practices....
+
+(1) add column in a table by the use of alter command....
+
+(2) changing data type of column in a table by the use of alter command....
+
+(3) change column name in a table by the use of alter command....
+
+(4) adding constraints to a column in a table by the use of alter command....
+
+(5) changing column position in a table by the use of alter command....
+
+(6) delete column in a table by the use of alter command....
+
+(7) Rename tables by the use of alter command....
+
+
+//methods.....
+
+(1) for add column method....
+
+alter table table_name
+add column_name datatype;
+
+(2) modify column....
+
+alter table table_name
+modify column_name datatype;
+
+(3) delete column...
+
+alter table table_name
+delete column_name datatype;
+
+(4) Rename column....
+
+alter table table_name
+change column_name new_name datatype;
+
+(5) rename table....
+
+alter table table_name
+rename new_table_name;
+
+
+// self work practices....
+
+ALTER TABLE personal
+
+ADD Email VARCHAR(255);
+
+//ab aik email ka new column add ho gaya ha last pr....
+
+ALTER TABLE personal
+
+MODIFY Email VARCHAR(255)
+
+AFTER name;
+
+//ab ye modify ka function email wlay column ko last sey name ky baad waly column mia print kr dy ga....
+
+
+ALTER TABLE personal
+
+MODIFY Email int(10);
+
+//ye ab is ki  datatype change ki ha column ki....
+
+ALTER TABLE personal
+
+add UNIQUE (Email);
+
+
+//hum apni marzi ky constraints bhi laga sekhty hain....
+
+
+ALTER TABLE personal
+
+change Email Email_id VARCHAR(255);
+
+//ab ye email ko email id mia change kr dy ga...means kay column ka name change kr dy ga.....
+
+
+ALTER TABLE personal
+
+drop COLUMN Email_id;
+
+
+
+//ab hum na wo column delete kr dya....
+
+
+ALTER TABLE personal
+
+RENAME personalss;
+
+//ye table ka name change kiya ha hum....
+
+
+ALTER TABLE lecturer
+
+AUTO_INCREMENT = 5;
+
+//ye kam karta ha ky mia aik table jo phely create kia tha lecturer wala us mia jb mia data entry karta tha to wo 0 pr a ky save hoota tha na ky 5 ky baad
+
+//us kay laiya mia phley us table ka name use kia phr AUTO_INCREMENT ka use kiya.....okay....

@@ -1,0 +1,34 @@
+//limit ka function hota is ka matlb ha ha limit set karna...SELECT * sey to sara data show ho jata tha lakin limit sey hum limit
+
+//laga kr data dekh sekhty hain means 2,3,4 etc...
+
+//method...
+
+SELECT * FROM file
+limit 3;
+
+//ab ye 3 ka hi data show kary ga...
+
+SELECT * FROM file
+where city="multan"
+limit 8;
+
+//ab 8 tak jo multan ky hain unn ka data show kary ga...
+
+SELECT * FROM file
+where city="multan"
+order by name
+limit 8;
+
+//ab 8 tak jo multan ky hain unn ka data order form mia show kary ga...
+
+//offset function...
+
+offset ka matlb hota ha limit ky baad wali value ko show karna...
+
+limit 3,3 phley offset ki value ha phr limit ki...
+
+SELECT * FROM file
+limit 3,3;
+
+//ab ye 4 sey start kary ga data show karna or 3 ka data show kary ga...

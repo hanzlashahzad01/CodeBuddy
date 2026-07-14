@@ -1,0 +1,102 @@
+//There are many time functions are given below....let see and check it down......
+
+SELECT current_time();
+
+//ye hum ko sever ka current_time print kr dy ga.....
+
+SELECT curtime();
+
+//ye 1st waly ka short hand ha work same hi ha.....
+
+SELECT current_timestamp() as time;
+
+//ye current_time or date 2 hi show kary ga.....
+
+
+SELECT localtime() as time;
+
+//ye bhi same current_time and date print kary ga current_timestamp ki traha bus syntx ka diff ha....
+
+
+SELECT localtimestamp() as time;
+
+
+//ye bhi same current_time and date print kary ga current_localtime ki traha bus syntx ka diff ha....
+
+
+SELECT time("2024/08/16 13:20:23") as time;
+
+
+
+//ab ye function mujhy only time dy ga....date nai dy ga.....
+
+SELECT hour("2024/08/16 13:20:23") as time;
+
+//ye hum ko only hours dy ga.....
+
+SELECT minute("2024/08/16 13:20:23") as time;
+
+//ye minutes....
+
+SELECT second("2024/08/16 13:20:23") as time;
+
+//ye seconds....
+
+
+SELECT microsecond("2024/08/16 13:20:23") as time;
+
+//microsecond hum na set hi nai kiya to ye 0 return kary ga....
+
+
+SELECT timediff("18:23:14" , "13:20:23") as time;
+
+
+//ye 2 times ko check kary ga ky kitny time ka diff ha....wo return kar dy ga only.....
+
+
+SELECT addtime("2024/07/16 2:34:23.00001" , "2:2:23.000003") as time;
+
+
+//ab ye time mia kuch extra time add karny kay laiya use hota ha....
+
+
+SELECT addtime("2024/07/16 2:34:23.00001" , "5 2:2:23.000003") as time;
+
+
+//ap isi taraha days ko bhi add kr sekhty ho......
+
+
+SELECT subtime("2024/07/16 2:34:23.00001" , "5 2:2:23.000003") as time;
+
+
+//ye - ka kam karta ha subtract karta ha time ko or days ko bhi.....
+
+
+SELECT maketime(2,34,20) as time;
+
+
+//ye ap ko time bana ky dy ga....
+
+
+SELECT timestamp("2024-07-14" , "2:34:12") as time;
+
+
+//ab ye 2 strings hain ye function in 2 ko combine kr kay dy ga.....
+
+
+SELECT time_format("2:34:12", "%h / %i / %s %p ") as time;
+
+
+//time time_format kay or bhi bhut sey formats hian jo javascript mia cover kiye hain.....
+
+
+SELECT time_to_sec("2:34:12") as time;
+
+
+//ye hamary  total time kay seconds bana dy ga.....
+
+
+SELECT sec_to_time("4354") as time;
+
+
+//hum is ko only second dyin gaye or ye hum ko time bana kr dy ga un ka.....

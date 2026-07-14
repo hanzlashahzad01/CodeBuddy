@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Name</label> <input type="text" id="test1" onfocus="focusfunction(this)" onblur="blurfunction(this)" oninput="inputfunction(this)"><br><br>
+        <label for="">Class</label> <input type="text" id="test2" onfocus="focusfunction(this)" onblur="blurfunction(this)" oninput="inputfunction(this)"><br><br>
+        <label for="">Country
+            <select name="" id="test3" onfocus="focusfunction(this)" onblur="blurfunction(this)" oninput="inputfunction(this)">
+                <option value="">Pakistan</option>
+                <option value="">China</option>
+                <option value="" selected>Nepal</option>
+                <option value="">india</option>
+                <option value="">uk</option>
+            </select>
+
+        </label>
+    </form>
+    <br>
+    <div id="test" style="border: 1px solid red;"></div>
+
+    <script>
+        // form events...
+
+        //(1) keydown (2) keypress (3) keyup (4) focus (5) blur (6) input (7) change
+        //(8) select (9) submit (10) invalid
+
+        // focus event tab chaly ga jb focus ho ga means ky jb click karin gaye...
+
+      function focusfunction(element){
+
+       element.style.background="lime";
+      
+    }
+
+    //blur function...
+
+    function blurfunction(element)
+    {
+        element.style.background="";
+    }
+
+    //input function...
+
+    //ye sirf inputs pr hi work karta ha or kisi pr work nai karta...
+
+    function inputfunction(element){
+
+        var x=element.value;
+        document.getElementById("test").innerHTML=x;
+
+    }
+
+
+    </script>
+</body>
+</html>

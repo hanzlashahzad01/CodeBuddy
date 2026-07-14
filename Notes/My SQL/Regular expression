@@ -1,0 +1,48 @@
+//Regular expression ye bhi same like operartor ki  taraha hi work karta ha bus sa thora sa diff ha.....
+
+//method...
+
+SELECT * FROM file
+where name regexp "ah";
+
+//ye ab un stu ka data print kry ga jin ka name mai ah a raha ho ga....
+
+SELECT * FROM file
+where name regexp "a";
+
+//ye sb ka print kry ga jin ky name mia a ata ha....
+
+SELECT * FROM file
+where name regexp "an$";
+
+//ab is $ sign ka matlb ye ha ky jis name ky last  pr an ata ho ga bus wohi print kary ga...
+
+SELECT * FROM file
+where name regexp "^ah";
+
+^ is ka matlb ha ky jis name mia ah start pr a raha ho ga un ko  print kary ga...
+
+SELECT * FROM file
+where name regexp '[gdf]';
+
+//ab ye un sb ka print kary  ga jin ka name mia g d ya f ata ho ga....
+
+SELECT * FROM file
+where name regexp '^[gdf]';
+
+//is ka matlb ye ha ky jin ky start mia g d f ata ho ga un ka hi print kary ga...
+
+SELECT * FROM file
+where name regexp '[a-h]e';
+
+//means that ab ye aik range ha ab ye un ko check kry ga jin name mia  a sey h tak ae ab he fe etc ata ho ga.....
+
+SELECT * FROM file
+where name regexp 'an|ah|ra';
+
+//ye stu ko print kry ga jin ky name mai an ah ra ata ho ga...
+
+SELECT * FROM file
+where name regexp '^an|^ah|^ra';
+
+ //ye stu ko print kry ga jin ky name ky start mai  an ah ra ata ho ga...isi tarah ap end ka bhi check kr sekty ho $ ky sath.... 

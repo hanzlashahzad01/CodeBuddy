@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        font-family:arial helvetica impact verdana opensans;
+        background:slategray;
+        margin:0;
+        padding:0;
+        }
+        #wrapper{
+        border:0px solid red;
+        width= 100px;
+        background:white;
+        margin:0 100px 0 100px;
+        }
+        #header{
+        background:crimson;
+        height:100px;
+        color:white;
+        
+        }
+        #header h1{
+        padding:30px 0 0 20px;
+        }
+        #menu{
+        background:lightsalmon;
+        }
+        #menu li{
+        display:inline;
+        }
+        #menu li a{
+        display:inline-block;
+        padding:10px 13px;
+        text-decoration:none;
+        color:black;
+        }
+        #menu li a:hover{
+        background:crimson;
+        color:white;
+        }
+        #sidebar a{
+        text-decoration:none;
+        color:black;
+        }
+        #menu ul{
+        margin:0;
+        }
+        
+        
+        #content{
+        width:800px;
+        float:left;
+        min-height:400px;
+        padding:15px;
+        box-sizing:border-box;
+        }
+        
+        #sidebar{
+        background:lightblue;
+        width:200px;
+        float:right;
+        min-height:400px;
+        
+        }
+        .footer{
+        background:lightsalmon;
+        clear:both;
+        padding:5px 10px;
+        text-align:right;
+        }
+        
+        
+        
+        
+        </style>
+        
+</head>
+<body>
+
+    <div id="wrapper">
+		<div id="header">
+		<h1>Hanzla Shahzad</h1>
+		    </div>
+				<div id="menu">
+				<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+</div>
+		<div id="content">
+		<h2>learn CSS</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut semper mauris. Proin tempor hendrerit tellus id sagittis. Cras in erat vel enim faucibus efficitur eget ut ipsum. Phasellus a bibendum dolor, sed efficitur odio. Etiam lacus augue, feugiat eget tellus a, pellentesque pellentesque tortor. Suspendisse laoreet lacus dui, et iaculis arcu dapibus et. Aliquam erat volutpat. Phasellus eget urna id urna volutpat semper non eu lectus. Morbi nulla augue, </p>
+		</div>
+<div id="sidebar">
+
+<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Gallery</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact us</a></li>
+
+				</ul>
+
+</div>
+<div class="footer">
+copyrightHanzlaShahzad@2023
+</div>
+
+
+
+
+</div>
+
+
+    <script>
+
+        
+// Dom target Methods..... there are many dom target metheds in javascript main three hi hain jo given below hain
+
+        /* (1) document.body (2) document.title (3) document.domain (4) document.links (5) document.header
+        (6) Document.forms (7) document.all (8) document.baseURI (9) document.url (10) document.images
+        (11) document.doctype*/
+        
+        // basic three methods hain...jo main hain...jo zayada use hoty hain...
+
+        (1) // id  -> document.getelementbyid()  ye id ko find karta by its name....
+
+        (2) // class name  -> document.getelementbyclassname()    ye class ko find karta ha by its namne....
+
+        (3) // tag name -> document.getelementbytagname()   ye tag name ko find karta ha by its name....
+
+         // now i am check the basic mathods of dom...
+
+         var element;
+
+         element= document.links;
+
+         console.log(element);
+
+         // main target method check....
+
+
+
+         var element;
+
+        element= document.getElementById("header");
+
+        console.log(element);
+
+        var element;
+
+        element= document.getElementsByClassName("footer");
+
+        console.log(element);
+
+
+        
+        var element;
+
+        element= document.getElementsByTagName("ul")[1];
+
+        console.log(element);
+
+        //sqaure brackets laga kr hum us ka index deyin gy or value ko check karin gy...
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //map function
+
+        /* map function basically function kay sath use hota ha 
+        map function exciting array ko to change nahi karta lakin
+        aik new array bana deta ha...
+        ap is ko calculations kay laiya bhi use kar sekhty hain...
+        */
+
+        var a=[10,20,30,40];
+
+        var b = a.map(test);
+        document.write(b +"<br>");
+
+        function test(X){
+           return X*10;
+        }
+
+        var person=[
+            {name:"raza",lname:'ali'},
+            {name:"raza",lname:'ali'},
+            {name:"raza",lname:'ali'}
+            
+        ];
+        var g = person.map(key);
+        document.write(g);
+
+        function key(v){
+           return v.name + "<br>";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+data types string numeric date and time... string mia char  varchar etc use hota ha char mai ap 0 sey 255 tak words likh sekhty ho
+varchar mia 0 sey 65535 tak words likh sekhty ho...or numeric mia bit int float boolen etc...date mia datetime timestamp year date etc
+
+
+
+create table....
+
+create table hanzla(
+
+id int ,
+name varchar(50),
+birth_date date,
+phone varchar(12)
+
+);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //working of isfunction....
+
+        /* isfunction hum ko bata ha kay jo value/varaible
+         hum na declear kia ha wo array ha kay nai agr wo
+         array ha to ye true print kary ga agr nai ha to false print kary ga
+         is ko if condition kay sath bhi use kar sekhty hain bahi.....*/
+
+        var a=[10,23,34,54,67];
+
+        document.write(a + "<br><br>");
+        
+        var b=Array.isArray(a);
+        
+        document.write(b + "<br><br>");
+
+        //another example of isarray function....
+
+        var c="hanzla";
+        
+        document.write(c + "<br><br>");
+
+        var d=Array.isArray(c);
+
+        document.write(d + "<br><br>");
+
+        //check this function with condition....
+
+        var x="232";
+
+        document.write(x + "<br><br>");
+
+        //apply condition using isarray function....
+
+        if(Array.isArray(x))
+        {
+
+            document.write("this is an array");
+        }
+        else{
+            document.write("this is not an array");
+        }
+
+
+
+
+    </script>
+</body>
+</html>

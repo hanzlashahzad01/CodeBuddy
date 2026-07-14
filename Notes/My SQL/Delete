@@ -1,0 +1,41 @@
+//ab ye function data ko sirf delete karta ha agr ap where condition ka use nai karty to sara data remove kr deyta ha...
+
+//agr ap condition ka use karty ho to phr wo usy condition ko dekh ky hi deletekry ga...
+
+//method...
+
+commit;
+
+delete from information
+where id=4;
+
+rollback;
+
+//ab phley ye delete ho ga phr us ko rollback ki help sey come back kr laiyn gaye....
+
+commit;
+
+delete from information
+where gender = 'f';
+
+rollback;
+
+//ab ye kia kary ga ye sary female gender ko remove kr dy ga...phr rollback sey come back ho jaye gi...
+
+use student;
+commit;
+
+delete from information
+where age > 20;
+
+rollback;
+
+//ab ye jin ki age 20 sey > ha un ko remove kr dy ga....
+
+commit;
+
+delete from information;
+
+rollback;
+
+// with out condition of where ye sb ko remove kr dy ga...

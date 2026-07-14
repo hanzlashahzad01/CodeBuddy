@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          // date methods....
+
+          // 1): tostring date ye function date ko print karta ha as it is....
+
+          var a=new Date();
+
+          document.write(a.toDateString() + "<br>");
+
+          // getdate method....ye simple aj ki date hi print kary ga....
+
+          var a=new Date();
+
+          document.write(a.getDate() + "<br>");
+
+          // getfull year..... ye simply year ko print karta ha.....
+
+          
+          var a=new Date();
+
+          document.write(a.getFullYear() + "<br>");
+
+          //  getmonth..... ye simply month ko print karta ha.....
+
+          // ye months ko 0 sey start karta ha....
+
+          
+          var a=new Date();
+
+          document.write(a.getMonth() + "<br>");
+
+          // getday .....ye simply day ko print kary ga number mia ye bhi 0 sey start hota ha.....
+
+
+          var a=new Date();
+
+          document.write(a.getDay() + "<br>");
+
+          // mia specific ya given date enter kar kay us din ka time or day find kr sekhta hn
+
+          var a=new Date('january 1 2004');
+
+          document.write(a.getDay() + "<br>");
+
+          // gethours....ye simply hours ko print kar dey ga....
+
+          var a=new Date();
+
+          document.write(a.getHours() + "<br>");
+          
+           // getminutes....ye simply mintues ko print kar dey ga....
+
+           
+          var a=new Date();
+
+          document.write(a.getMinutes() + "<br>");
+
+          // getsecond....ye simply second ko print kar dey ga....
+
+          var a=new Date();
+
+          document.write(a.getSeconds() + "<br>");
+
+           // getmilisecond....ye simply milisecond ko print kar dey ga....
+
+           var a=new Date();
+
+           document.write(a.getMilliseconds() + "<br>");
+
+           // set functions....
+
+           // set date function....
+
+           var a=new Date();
+
+           a.setDate(20);
+
+           document.write(a + "<br>");
+
+           
+           // set full year function....
+
+           
+           var a=new Date();
+
+           a.setFullYear(2024);
+
+           document.write(a + "<br>");
+
+           // set hours function....
+
+           
+           var a=new Date();
+
+           a.setHours(18);
+
+           document.write(a + "<br>");
+
+           // example how to set a date by itself....
+
+           var d= new Date();
+
+           document.write(d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear());
+
+          
+
+
+
+
+          
+    </script>
+</body>
+</html>

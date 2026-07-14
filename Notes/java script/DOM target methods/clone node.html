@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+#test{
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    background-color: bisque;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <ul id="list1">
+        <li>orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+        <li>Apple</li>
+
+    </ul>
+
+    <ul id="list2">
+
+        <li>Carrot</li>
+        <li>Reddish</li>
+        <li>Guava</li>
+        <li>orange</li>
+
+    </ul>
+
+    <div id="test">
+
+    </div>
+
+    <script>
+
+        //clonenode method....
+
+       // clonenode means that kay ye jo mia na do ul list create ki hain phely ul mia sey aik element laiy 
+       // ky dosri ul mia add karny ky method ko clonenode kehty hain...
+// clone node basically copy ka kam karta ha...
+
+//clone node mia bus two hi parameter hoty hain true or false...false bydefault method ha...
+
+  var target=document.getElementById("list1").children[0];
+
+  var copyelement=target.cloneNode(true);
+
+  console.log(copyelement);
+
+  document.getElementById("test").appendChild(copyelement);
+
+
+
+
+    </script>
+</body>
+</html>

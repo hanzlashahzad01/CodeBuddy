@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>java script</title>
+        <script>
+document.write("<i><b>hello world<b></i> <br>");
+document.write(1000000);
+        </script>
+    </head>
+    <body>
+        <script>
+            var first_name="hanzlashahzad";
+            var a,b;
+            a=hanzlashahzad;
+            b=akber;
+            document.write(first_name);
+            document.write(a);
+        </script>
+
+    </body>
+</html>

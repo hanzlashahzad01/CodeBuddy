@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="backfunction()">backfunction</button>
+    <button onclick="forwardfunction()">Forwardfunction</button>
+    <button onclick="gofunction()">gofunction</button>
+
+    <script>
+        // history functios and methods...
+
+        // sb sey phely ata ha length function function ye page ki length bata ha kay kitny page open hain window 
+        //mai...
+
+        //length function only function hi hota ha bus is mia...
+
+        document.write(history.length);
+
+        // methods of histry...3 methods hain (1)back (2) forward (3) go...
+
+// back method ye`page ko back karta ha bus...
+
+        function backfunction(){
+            history.back();
+        }
+        // forward method ye`page ko forward karta ha bus next page pr...
+
+        function forwardfunction(){
+            history.forward();
+        }
+
+        // go methode go method forward or back dono hi kam karta ha agr hum - mia value deyn gaye to
+
+        //ye back page open kary ga + mia mia forward page open kary ga...page ap kjud set karin gy
+        //ky page forward karn ha kitny page back -mai back +mia forward...
+
+        function gofunction(){
+            history.go(1);
+        }
+    </script>
+</body>
+</html>
