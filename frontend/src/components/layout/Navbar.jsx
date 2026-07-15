@@ -44,6 +44,8 @@ const Navbar = () => {
             <div className="hidden md:ml-10 md:flex md:space-x-8">
               <Link to="/playlists" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Playlists</Link>
               <Link to="/tutorials" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Tutorials</Link>
+              <Link to="/roadmap" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Roadmaps</Link>
+              <Link to="/sandbox" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Playground</Link>
               <Link to="/courses" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Premium</Link>
               <Link to="/blogs" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] px-3 py-2 text-lg font-medium transition-colors">Blog</Link>
             </div>
@@ -139,6 +141,20 @@ const Navbar = () => {
               className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] px-3 py-2.5 rounded-xl text-lg font-semibold transition-all"
             >
               Tutorials
+            </Link>
+            <Link 
+              to="/roadmap" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] px-3 py-2.5 rounded-xl text-lg font-semibold transition-all"
+            >
+              Roadmaps
+            </Link>
+            <Link 
+              to="/sandbox" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] px-3 py-2.5 rounded-xl text-lg font-semibold transition-all"
+            >
+              Playground
             </Link>
             <Link 
               to="/courses" 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Star, Clock, Users, Play, ArrowRight, BookOpen, Code, Download, MessageSquare, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const getYoutubeEmbedUrl = (url) => {
   if (!url) return '';
@@ -100,7 +101,7 @@ const Home = () => {
             <motion.span variants={fadeUp} className="inline-block text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-5 py-2 rounded-full mb-8">
               🚀 Pakistan's #1 Coding Platform
             </motion.span>
-            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl md:text-8xl font-black text-[var(--text-main)] mb-8 leading-[1.05] tracking-tight">
+            <motion.h1 variants={fadeUp} className="text-3xl sm:text-6xl md:text-8xl font-black text-[var(--text-main)] mb-6 sm:mb-8 leading-[1.05] tracking-tight">
               Learn to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500">
                 Code
@@ -125,13 +126,15 @@ const Home = () => {
       {/* ─── STATS BAR ─── */}
       <section className="bg-[var(--card)] border-y border-[var(--border)] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, i) => (
-              <div key={i} className="flex items-center gap-4 justify-center">
-                <div className="text-[var(--color-primary)]">{stat.icon}</div>
+              <div key={i} className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 justify-center text-center sm:text-left">
+                <div className="text-[var(--color-primary)] flex-shrink-0">{stat.icon}</div>
                 <div>
-                  <div className="text-3xl font-black text-[var(--text-main)]">{stat.value}</div>
-                  <div className="text-base text-[var(--text-muted)] font-semibold">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-[var(--text-main)]">
+                    <AnimatedCounter target={stat.value} />
+                  </div>
+                  <div className="text-xs sm:text-base text-[var(--text-muted)] font-semibold leading-tight">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -159,16 +162,20 @@ const Home = () => {
                 const gradient = index % 3 === 0 ? 'from-blue-600 to-indigo-700' : index % 3 === 1 ? 'from-green-600 to-teal-700' : 'from-purple-600 to-pink-700';
                 const priceLabel = course.price === 0 ? 'Free' : `PKR ${course.price.toLocaleString()}`;
                 const originalPriceLabel = course.discount > 0 ? `PKR ${(course.price + course.discount).toLocaleString()}` : '';
+                const imgSrc = course.image && course.image !== 'no-photo.jpg'
+                  ? (course.image.startsWith('http') ? course.image : null)
+                  : null;
                 return (
                   <motion.div key={course._id} variants={fadeUp}>
                     <Link to={`/courses/${course._id}`} className="block bg-[var(--card)] border border-[var(--border)] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
                       <div className="h-52 relative flex items-center justify-center overflow-hidden bg-slate-800">
-                        {course.image && course.image !== 'no-photo.jpg' ? (
-                          <img 
-                            src={course.image.startsWith('/') ? `http://localhost:5000${course.image}` : course.image} 
+                        {imgSrc ? (
+                          <img
+                            src={imgSrc}
                             alt={course.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            onError={(e) => { e.target.src = '/no-photo.jpg' }}
+                            loading="lazy"
+                            onError={(e) => { e.target.style.display = 'none'; }}
                           />
                         ) : (
                           <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
@@ -180,7 +187,7 @@ const Home = () => {
                         )}
                       </div>
                       <div className="p-7">
-                        <h3 className="text-2xl font-bold text-[var(--text-main)] mb-3 leading-tight line-clamp-2 h-14">{course.title}</h3>
+                        <h3 className="text-2xl font-bold text-[var(--text-main)] mb-3 leading-tight line-clamp-2">{course.title}</h3>
                         <p className="text-[var(--text-muted)] font-medium mb-4">By {course.instructor?.name || 'CodeBuddy'}</p>
                         <div className="flex items-center gap-3 mb-5">
                           <div className="flex text-yellow-500">{'★'.repeat(Math.floor(course.averageRating || 5))}</div>
@@ -231,35 +238,37 @@ const Home = () => {
             {loading ? (
               <p className="text-[var(--text-muted)] text-lg">Loading free tutorials...</p>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {tutorials.map((t) => {
+                  const tThumb = t.thumbnailUrl && t.thumbnailUrl.startsWith('http') ? t.thumbnailUrl : null;
                   return (
-                    <motion.div key={t._id} variants={fadeUp} onClick={() => setActiveVideo(t)}>
-                      <div className="bg-[var(--bg)] border border-[var(--border)] rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-                        <div className="aspect-[16/9] w-full bg-slate-800 relative flex items-center justify-center overflow-hidden">
-                          {t.thumbnailUrl ? (
-                            <img 
-                              src={t.thumbnailUrl} 
-                              alt={t.title} 
+                    <motion.div key={t._id} variants={fadeUp} onClick={() => setActiveVideo(t)} className="cursor-pointer">
+                      <div className="bg-[var(--bg)] border border-[var(--border)] rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group h-full flex flex-col">
+                        <div className="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden flex-shrink-0">
+                          {tThumb ? (
+                            <img
+                              src={tThumb}
+                              alt={t.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              onError={(e) => { e.target.src = '/no-thumbnail.jpg' }}
+                              loading="lazy"
+                              onError={(e) => { e.target.style.display = 'none'; }}
                             />
                           ) : (
-                            <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <Play className="w-7 h-7 text-white fill-white" />
+                            <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+                              <Play className="w-10 h-10 text-white/40" />
                             </div>
                           )}
                           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center shadow-xl">
                               <Play className="w-6 h-6 text-white fill-white ml-0.5" />
                             </div>
                           </div>
                           {t.duration && (
-                            <span className="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded z-10">{t.duration}</span>
+                            <span className="absolute bottom-2 right-2 bg-black/80 text-white text-[11px] font-bold px-2 py-0.5 rounded z-10">{t.duration}</span>
                           )}
                         </div>
-                        <div className="p-5">
-                          <h3 className="text-base font-bold text-[var(--text-main)] line-clamp-2 leading-snug mb-2 h-12">{t.title}</h3>
+                        <div className="p-4 flex flex-col flex-grow">
+                          <h3 className="text-sm font-bold text-[var(--text-main)] line-clamp-2 leading-snug mb-2 flex-grow">{t.title}</h3>
                           <p className="text-[var(--text-muted)] text-xs font-semibold">Free Tutorial</p>
                         </div>
                       </div>
@@ -289,24 +298,24 @@ const Home = () => {
             <span className="text-sm sm:text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Topics</span>
             <h2 className="text-3xl sm:text-5xl font-black text-[var(--text-main)] mt-2">Browse by Category</h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
             {categories.map((cat, i) => (
               <motion.div key={i} variants={fadeUp}>
                 <Link
                   to={`/category/${cat.slug}`}
-                  className="relative flex flex-col items-center p-6 sm:p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  className="relative flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl border hover:shadow-xl transition-all duration-300 group cursor-pointer min-h-[120px] sm:min-h-[150px]"
                   style={{ background: cat.bg, borderColor: `${cat.color}30` }}
                 >
                   {/* Coming Soon badge */}
                   {!cat.hasContent && (
-                    <span className="absolute top-3 right-3 text-[10px] font-black uppercase tracking-wider bg-black/20 text-white px-2 py-0.5 rounded-full">
+                    <span className="absolute top-1.5 right-1.5 text-[8px] sm:text-[10px] font-black uppercase tracking-wider bg-black/20 text-white px-1.5 py-0.5 rounded-full">
                       Soon
                     </span>
                   )}
-                  <span className="text-5xl mb-4">{cat.icon}</span>
-                  <span className="text-lg font-bold text-center" style={{ color: cat.color }}>{cat.name}</span>
+                  <span className="text-3xl sm:text-5xl mb-2 sm:mb-3">{cat.icon}</span>
+                  <span className="text-xs sm:text-base font-bold text-center leading-tight" style={{ color: cat.color }}>{cat.name}</span>
                   {!cat.hasContent && (
-                    <span className="text-[11px] mt-1 font-semibold" style={{ color: cat.color, opacity: 0.6 }}>Coming Soon</span>
+                    <span className="text-[9px] sm:text-[10px] mt-1 font-semibold text-center" style={{ color: cat.color, opacity: 0.6 }}>Coming Soon</span>
                   )}
                 </Link>
               </motion.div>

@@ -6,7 +6,8 @@ import {
   LayoutDashboard, Users, BookOpen, ShoppingCart, MessageSquare,
   FileText, LogOut, ChevronRight, TrendingUp, DollarSign,
   Settings, Bell, Search, Menu, X, Star, PlayCircle, Plus,
-  Edit, Trash2, Upload, FolderOpen, FileCheck, Eye, Rss, CheckCheck
+  Edit, Trash2, Upload, FolderOpen, FileCheck, Eye, Rss, CheckCheck,
+  Megaphone, Video
 } from 'lucide-react';
 import { logout, reset } from '../../features/auth/authSlice';
 
@@ -214,6 +215,15 @@ const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [messages, setMessages] = useState([]);
   const [loadingStats, setLoadingStats] = useState(true);
+  const [announcements, setAnnouncements] = useState([]);
+  const [liveClasses, setLiveClasses] = useState([]);
+  const [annTitle, setAnnTitle] = useState('');
+  const [annContent, setAnnContent] = useState('');
+  const [annTag, setAnnTag] = useState('General');
+  const [liveTitle, setLiveTitle] = useState('');
+  const [liveDesc, setLiveDesc] = useState('');
+  const [liveDate, setLiveDate] = useState('');
+  const [liveUrl, setLiveUrl] = useState('');
 
   // File Upload Loading State
   const [uploadingFile, setUploadingFile] = useState(false);
@@ -347,10 +357,85 @@ const AdminDashboard = () => {
     }
   };
 
-  const fetchMessages = async () => {
+  const fetchAnnouncements = async () => {
     try {
-      const { data } = await axios.get('/api/messages', { withCredentials: true });
-      if (data.success) setMessages(data.data);
+      const { data } = await axios.get('/api/announcements');
+      if (data.success) setAnnouncements(data.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const fetchLiveClasses = async () => {
+    try {
+      const { data } = await axios.get('/api/live-classes', { withCredentials: true });
+      if (data.success) setLiveClasses(data.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleCreateAnnouncement = async (e) => {
+    e.preventDefault();
+    if (!annTitle.trim() || !annContent.trim()) return;
+    try {
+      const { data } = await axios.post('/api/announcements', {
+        title: annTitle,
+        content: annContent,
+        tag: annTag
+      }, { withCredentials: true });
+      if (data.success) {
+        setAnnouncements([data.data, ...announcements]);
+        setAnnTitle('');
+        setAnnContent('');
+        setAnnTag('General');
+        alert('Announcement published successfully! 🔔');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error creating announcement');
+    }
+  };
+
+  const handleDeleteAnnouncement = async (id) => {
+    if (!window.confirm('Delete this announcement?')) return;
+    try {
+      await axios.delete(`/api/announcements/${id}`, { withCredentials: true });
+      setAnnouncements(announcements.filter(a => a._id !== id));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleCreateLiveClass = async (e) => {
+    e.preventDefault();
+    if (!liveTitle.trim() || !liveDesc.trim() || !liveDate || !liveUrl.trim()) return;
+    try {
+      const { data } = await axios.post('/api/live-classes', {
+        title: liveTitle,
+        description: liveDesc,
+        scheduledAt: liveDate,
+        joinUrl: liveUrl
+      }, { withCredentials: true });
+      if (data.success) {
+        setLiveClasses([...liveClasses, data.data]);
+        setLiveTitle('');
+        setLiveDesc('');
+        setLiveDate('');
+        setLiveUrl('');
+        alert('Webinar scheduled successfully! 📅');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error scheduling class');
+    }
+  };
+
+  const handleDeleteLiveClass = async (id) => {
+    if (!window.confirm('Cancel this scheduled class?')) return;
+    try {
+      await axios.delete(`/api/live-classes/${id}`, { withCredentials: true });
+      setLiveClasses(liveClasses.filter(c => c._id !== id));
     } catch (err) {
       console.error(err);
     }
@@ -367,7 +452,8 @@ const AdminDashboard = () => {
         fetchVideos(),
         fetchNotes(),
         fetchBlogs(),
-        fetchMessages()
+        fetchAnnouncements(),
+        fetchLiveClasses()
       ]);
       setLoadingStats(false);
     };
@@ -780,6 +866,8 @@ const AdminDashboard = () => {
     { id: 'blogs', label: 'Blogs', icon: Rss },
     { id: 'orders', label: 'Orders', icon: ShoppingCart },
     { id: 'messages', label: 'Messages', icon: MessageSquare },
+    { id: 'announcements', label: 'Announcements', icon: Megaphone },
+    { id: 'webinars', label: 'Webinars', icon: Video },
   ];
 
   const statCards = [
@@ -1727,6 +1815,170 @@ const AdminDashboard = () => {
                   <p className="text-lg font-semibold">No messages yet.</p>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* ── ANNOUNCEMENTS ── */}
+          {activeTab === 'announcements' && (
+            <div className="space-y-6">
+              <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-[var(--text-main)] mb-4">Publish Announcement</h2>
+                <form onSubmit={handleCreateAnnouncement} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Title</label>
+                    <input
+                      type="text"
+                      required
+                      value={annTitle}
+                      onChange={(e) => setAnnTitle(e.target.value)}
+                      placeholder="e.g. JavaScript Live Class rescheduled"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Content</label>
+                    <textarea
+                      required
+                      rows={3}
+                      value={annContent}
+                      onChange={(e) => setAnnContent(e.target.value)}
+                      placeholder="Enter announcement details..."
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm resize-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Tag Priority</label>
+                    <select
+                      value={annTag}
+                      onChange={(e) => setAnnTag(e.target.value)}
+                      className="px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm"
+                    >
+                      <option value="General">General</option>
+                      <option value="Update">Update</option>
+                      <option value="New Course">New Course</option>
+                      <option value="Urgent">Urgent</option>
+                    </select>
+                  </div>
+                  <button type="submit" className="px-6 py-3 bg-[var(--color-primary)] text-white font-bold rounded-xl text-sm cursor-pointer">
+                    Publish Announcement 🔔
+                  </button>
+                </form>
+              </div>
+
+              <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-sm overflow-hidden">
+                <div className="p-6 border-b border-[var(--border)]">
+                  <h3 className="font-bold text-[var(--text-main)] text-lg">Active Announcements ({announcements.length})</h3>
+                </div>
+                {announcements.length > 0 ? (
+                  <div className="divide-y divide-[var(--border)]">
+                    {announcements.map((ann) => (
+                      <div key={ann._id} className="p-6 flex justify-between items-start gap-4">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-500/10 text-indigo-500 px-2 py-0.5 rounded-full">
+                              {ann.tag}
+                            </span>
+                            <span className="text-xs text-[var(--text-muted)]">{new Date(ann.createdAt).toLocaleString()}</span>
+                          </div>
+                          <h4 className="font-bold text-[var(--text-main)]">{ann.title}</h4>
+                          <p className="text-sm text-[var(--text-muted)] mt-1 whitespace-pre-wrap">{ann.content}</p>
+                        </div>
+                        <button onClick={() => handleDeleteAnnouncement(ann._id)} className="p-2 text-red-500 hover:bg-red-50 rounded-lg cursor-pointer">
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-12 text-center text-[var(--text-muted)]">No active announcements.</div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* ── WEBINARS ── */}
+          {activeTab === 'webinars' && (
+            <div className="space-y-6">
+              <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-[var(--text-main)] mb-4">Schedule Webinar / Live Class</h2>
+                <form onSubmit={handleCreateLiveClass} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Webinar Title</label>
+                      <input
+                        type="text"
+                        required
+                        value={liveTitle}
+                        onChange={(e) => setLiveTitle(e.target.value)}
+                        placeholder="e.g. Master React Hooks live session"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Meeting Join Link</label>
+                      <input
+                        type="url"
+                        required
+                        value={liveUrl}
+                        onChange={(e) => setLiveUrl(e.target.value)}
+                        placeholder="e.g. Zoom or YouTube link"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Webinar Description</label>
+                    <textarea
+                      required
+                      rows={2}
+                      value={liveDesc}
+                      onChange={(e) => setLiveDesc(e.target.value)}
+                      placeholder="Brief overview of session topics..."
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm resize-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">Date & Time</label>
+                    <input
+                      type="datetime-local"
+                      required
+                      value={liveDate}
+                      onChange={(e) => setLiveDate(e.target.value)}
+                      className="px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-main)] text-sm"
+                    />
+                  </div>
+                  <button type="submit" className="px-6 py-3 bg-[var(--color-primary)] text-white font-bold rounded-xl text-sm cursor-pointer">
+                    Schedule live class 🎥
+                  </button>
+                </form>
+              </div>
+
+              <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-sm overflow-hidden">
+                <div className="p-6 border-b border-[var(--border)]">
+                  <h3 className="font-bold text-[var(--text-main)] text-lg">Scheduled Classes ({liveClasses.length})</h3>
+                </div>
+                {liveClasses.length > 0 ? (
+                  <div className="divide-y divide-[var(--border)]">
+                    {liveClasses.map((cls) => (
+                      <div key={cls._id} className="p-6 flex justify-between items-start gap-4">
+                        <div>
+                          <h4 className="font-bold text-[var(--text-main)]">{cls.title}</h4>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">{cls.description}</p>
+                          <div className="mt-3 flex flex-wrap gap-4 text-xs font-semibold text-[var(--text-muted)]">
+                            <span>📅 {new Date(cls.scheduledAt).toLocaleString()}</span>
+                            <a href={cls.joinUrl} target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline">Link: {cls.joinUrl}</a>
+                          </div>
+                        </div>
+                        <button onClick={() => handleDeleteLiveClass(cls._id)} className="p-2 text-red-500 hover:bg-red-50 rounded-lg cursor-pointer">
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-12 text-center text-[var(--text-muted)]">No scheduled sessions.</div>
+                )}
+              </div>
             </div>
           )}
         </main>

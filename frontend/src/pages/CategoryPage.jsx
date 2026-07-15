@@ -94,11 +94,11 @@ const CategoryPage = () => {
       </Link>
 
       {/* Hero */}
-      <div className="rounded-3xl p-8 mb-10 flex items-center gap-6" style={{ background: `${meta.color}15`, border: `1px solid ${meta.color}30` }}>
-        <span className="text-7xl">{meta.icon}</span>
-        <div>
-          <h1 className="text-4xl font-black text-[var(--text-main)]">{meta.label}</h1>
-          <p className="text-[var(--text-muted)] text-lg mt-1">{meta.desc}</p>
+      <div className="rounded-3xl p-5 sm:p-8 mb-10 flex items-center gap-4 sm:gap-6 overflow-hidden" style={{ background: `${meta.color}15`, border: `1px solid ${meta.color}30` }}>
+        <span className="text-4xl sm:text-7xl flex-shrink-0">{meta.icon}</span>
+        <div className="min-w-0">
+          <h1 className="text-2xl sm:text-4xl font-black text-[var(--text-main)] truncate">{meta.label}</h1>
+          <p className="text-[var(--text-muted)] text-sm sm:text-lg mt-1 line-clamp-2">{meta.desc}</p>
         </div>
       </div>
 

@@ -100,6 +100,8 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-[var(--text-muted)]">
               <li><Link to="/playlists" className="hover:text-[var(--color-primary)] transition-colors">Free Lectures</Link></li>
               <li><Link to="/tutorials" className="hover:text-[var(--color-primary)] transition-colors">All Tutorials</Link></li>
+              <li><Link to="/roadmap"   className="hover:text-[var(--color-primary)] transition-colors">Learning Roadmaps</Link></li>
+              <li><Link to="/sandbox"   className="hover:text-[var(--color-primary)] transition-colors">Code Playground</Link></li>
               <li><Link to="/courses"   className="hover:text-[var(--color-primary)] transition-colors">Premium Courses</Link></li>
               <li><Link to="/blogs"     className="hover:text-[var(--color-primary)] transition-colors">Tech Blog</Link></li>
               <li><Link to="/notes"     className="hover:text-[var(--color-primary)] transition-colors">Download Notes</Link></li>

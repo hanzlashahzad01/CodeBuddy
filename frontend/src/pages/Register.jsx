@@ -10,7 +10,8 @@ const schema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
   email: z.string().email({ message: 'Invalid email address' }),
   password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
-  confirmPassword: z.string()
+  confirmPassword: z.string(),
+  referralCode: z.string().optional()
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
   path: ["confirmPassword"],
@@ -29,7 +30,8 @@ const Register = () => {
     const userData = {
       name: data.name,
       email: data.email,
-      password: data.password
+      password: data.password,
+      referralCode: data.referralCode
     };
     dispatch(registerUser(userData));
   };
@@ -94,10 +96,21 @@ const Register = () => {
             {errors.confirmPassword && <p className="text-red-500 text-sm mt-2 font-medium">{errors.confirmPassword.message}</p>}
           </div>
 
+          <div>
+            <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Referral Code (Optional)</label>
+            <input
+              type="text"
+              {...register('referralCode')}
+              className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all uppercase"
+              placeholder="CB-XXXXXX"
+            />
+            {errors.referralCode && <p className="text-red-500 text-sm mt-2 font-medium">{errors.referralCode.message}</p>}
+          </div>
+
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-lg font-bold rounded-xl transition-all disabled:opacity-50"
+            className="w-full py-4 mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-lg font-bold rounded-xl transition-all disabled:opacity-50 cursor-pointer"
           >
             {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>

@@ -1,6 +1,7 @@
 const Order = require('../models/Order');
 const Course = require('../models/Course');
 const User = require('../models/User');
+const Coupon = require('../models/Coupon');
 
 // @desc    Create new order (student only)
 // @route   POST /api/orders
@@ -39,9 +40,25 @@ exports.createOrder = async (req, res) => {
 
     // If free or instantly paid, add to purchasedCourses
     if (order.paymentStatus === 'paid') {
-      await User.findByIdAndUpdate(req.user.id, {
-        $addToSet: { purchasedCourses: courseId }
-      });
+      const updatedUser = await User.findByIdAndUpdate(
+        req.user.id,
+        { $addToSet: { purchasedCourses: courseId } },
+        { new: true }
+      );
+      
+      // If this is their first course purchase, reward the referrer
+      if (updatedUser.purchasedCourses.length === 1 && updatedUser.referredBy) {
+        const randCode = 'REF-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        await Coupon.create({
+          code: randCode,
+          discountType: 'percentage',
+          discountValue: 15,
+          expiryDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000), // 60 days
+          usageLimit: 1,
+          isActive: true,
+          minOrderAmount: 0
+        });
+      }
     }
 
     res.status(201).json({ success: true, data: order });
@@ -116,9 +133,25 @@ exports.updateOrderStatus = async (req, res) => {
 
     // If status changed to paid, add course to user's purchasedCourses
     if (paymentStatus === 'paid') {
-      await User.findByIdAndUpdate(order.user, {
-        $addToSet: { purchasedCourses: order.course }
-      });
+      const updatedUser = await User.findByIdAndUpdate(
+        order.user,
+        { $addToSet: { purchasedCourses: order.course } },
+        { new: true }
+      );
+      
+      // If this is their first course purchase, reward the referrer
+      if (updatedUser.purchasedCourses.length === 1 && updatedUser.referredBy) {
+        const randCode = 'REF-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        await Coupon.create({
+          code: randCode,
+          discountType: 'percentage',
+          discountValue: 15,
+          expiryDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000), // 60 days
+          usageLimit: 1,
+          isActive: true,
+          minOrderAmount: 0
+        });
+      }
     }
 
     res.status(200).json({ success: true, data: order });

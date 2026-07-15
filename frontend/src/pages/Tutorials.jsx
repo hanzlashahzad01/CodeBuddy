@@ -60,7 +60,7 @@ const Tutorials = () => {
       {loading ? (
         <p className="text-[var(--text-muted)] text-xl text-center">Loading tutorials...</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {tutorials.map((tutorial) => {
             return (
               <div 
@@ -91,7 +91,7 @@ const Tutorials = () => {
                   )}
                 </div>
                 <div className="p-5">
-                  <h3 className="text-base font-bold text-[var(--text-main)] mb-2 line-clamp-2 leading-snug h-12">{tutorial.title}</h3>
+                  <h3 className="text-sm font-bold text-[var(--text-main)] mb-2 line-clamp-2 leading-snug">{tutorial.title}</h3>
                   <p className="text-[var(--text-muted)] text-xs font-semibold">Free Tutorial</p>
                 </div>
               </div>

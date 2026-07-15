@@ -24,6 +24,8 @@ import PlaylistDetail from './pages/PlaylistDetail';
 import CourseDetail from './pages/CourseDetail';
 import Checkout from './pages/Checkout';
 import ForgotPassword from './pages/ForgotPassword';
+import Roadmap from './pages/Roadmap';
+import Sandbox from './pages/Sandbox';
 
 // Dashboards
 import StudentDashboard from './pages/dashboard/StudentDashboard';
@@ -32,6 +34,17 @@ import AdminDashboard from './pages/dashboard/AdminDashboard';
 // Route Guards
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AdminRoute from './components/auth/AdminRoute';
+
+// ── Scroll to top on every route change ──
+import { useEffect } from 'react';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+};
 
 // Layout that wraps public pages with Navbar + Footer
 const WithNavbar = () => {
@@ -49,6 +62,7 @@ const WithNavbar = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* ── Dashboards: full-screen, no Navbar/Footer ── */}
         <Route path="/dashboard" element={
@@ -73,6 +87,8 @@ function App() {
           <Route path="/playlists" element={<Playlists />} />
           <Route path="/playlists/:id" element={<PlaylistDetail />} />
           <Route path="/category/:slug" element={<CategoryPage />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/sandbox" element={<Sandbox />} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

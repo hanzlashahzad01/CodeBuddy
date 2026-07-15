@@ -45,6 +45,15 @@ const userSchema = new mongoose.Schema({
   }],
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  referralCode: {
+    type: String,
+    unique: true,
+    sparse: true // Allows multiple null/undefined values for users without a code initially
+  },
+  referredBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 }, {
   timestamps: true
 });

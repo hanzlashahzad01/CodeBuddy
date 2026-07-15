@@ -34,18 +34,18 @@ const Contact = () => {
   return (
     <div className="bg-[var(--bg)] transition-colors duration-300">
       {/* Hero */}
-      <section className="py-24 text-center relative overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-14 sm:py-24 text-center relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4">
-          <motion.span initial="hidden" animate="visible" variants={fadeUp} className="inline-block text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-5 py-2 rounded-full mb-8">Get in Touch</motion.span>
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-7xl font-black text-[var(--text-main)] mb-6">Contact Us</motion.h1>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-[var(--text-muted)]">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</motion.p>
+          <motion.span initial="hidden" animate="visible" variants={fadeUp} className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-4 py-2 rounded-full mb-6">Get in Touch</motion.span>
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl sm:text-6xl md:text-7xl font-black text-[var(--text-main)] mb-5">Contact Us</motion.h1>
+          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-base sm:text-xl text-[var(--text-muted)] max-w-xl mx-auto">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-5 gap-12">
+      <section className="pb-12 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
           {/* Contact Info */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-2 space-y-8">
             <div>
@@ -98,7 +98,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-3">
-            <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-10 shadow-xl">
+            <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl">
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-12">
@@ -110,7 +110,7 @@ const Contact = () => {
                 ) : (
                   <motion.form key="form" onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <h3 className="text-3xl font-black text-[var(--text-main)] mb-2">Send a Message</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Full Name</label>
                         <input {...register('name')} className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="John Doe" />

@@ -83,12 +83,14 @@ exports.getPlaylists = async (req, res) => {
       .sort({ createdAt: -1 })
       .populate('instructor', 'name avatar');
 
-    // Attach real video count from Video collection
+    // Attach real video count and first video details from Video collection
     const withCount = await Promise.all(
       playlists.map(async (pl) => {
         const count = await Video.countDocuments({ playlist: pl._id });
+        const firstVideo = await Video.findOne({ playlist: pl._id }).sort({ order: 1 });
         const obj   = pl.toObject();
         obj.videoCount = count;
+        obj.firstVideo = firstVideo ? { videoUrl: firstVideo.videoUrl, thumbnailUrl: firstVideo.thumbnailUrl } : null;
         return obj;
       })
     );

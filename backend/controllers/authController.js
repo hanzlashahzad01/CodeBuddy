@@ -25,7 +25,9 @@ const sendTokenResponse = (user, statusCode, res) => {
         name: user.name,
         email: user.email,
         role: user.role,
-        avatar: user.avatar
+        avatar: user.avatar,
+        referralCode: user.referralCode,
+        purchasedCourses: user.purchasedCourses
       }
     });
 };
@@ -35,7 +37,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 // @access  Public
 exports.register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, referralCode } = req.body;
 
     // Check if user exists
     let user = await User.findOne({ email });
@@ -43,11 +45,33 @@ exports.register = async (req, res) => {
       return res.status(400).json({ success: false, error: 'User already exists' });
     }
 
+    // Check if referral code is valid
+    let referrer = null;
+    if (referralCode && referralCode.trim()) {
+      referrer = await User.findOne({ referralCode: referralCode.trim().toUpperCase() });
+    }
+
+    // Generate unique referral code for the new user
+    const generateCode = () => {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let code = 'CB-';
+      for (let i = 0; i < 6; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+      return code;
+    };
+
+    let newReferralCode = generateCode();
+    // Ensure uniqueness
+    while (await User.findOne({ referralCode: newReferralCode })) {
+      newReferralCode = generateCode();
+    }
+
     // Create user
     user = await User.create({
       name,
       email,
       password,
+      referralCode: newReferralCode,
+      referredBy: referrer ? referrer._id : undefined
     });
 
     sendTokenResponse(user, 201, res);

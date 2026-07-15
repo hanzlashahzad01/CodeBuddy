@@ -50,6 +50,11 @@ const reviewRoutes   = require('./routes/reviewRoutes');
 const searchRoutes   = require('./routes/searchRoutes');
 const noteRoutes     = require('./routes/noteRoutes');
 const uploadRoutes   = require('./routes/uploadRoutes');
+const progressRoutes = require('./routes/progressRoutes');
+const commentRoutes  = require('./routes/commentRoutes');
+const quizRoutes     = require('./routes/quizRoutes');
+const announcementRoutes = require('./routes/announcementRoutes');
+const liveClassRoutes = require('./routes/liveClassRoutes');
 
 // Mount routers
 app.use('/api/auth',      auth);
@@ -67,6 +72,11 @@ app.use('/api/reviews',   reviewRoutes);
 app.use('/api/search',    searchRoutes);
 app.use('/api/notes',     noteRoutes);
 app.use('/api/upload',    uploadRoutes);
+app.use('/api/progress',  progressRoutes);
+app.use('/api/comments',  commentRoutes);
+app.use('/api/quizzes',   quizRoutes);
+app.use('/api/announcements', announcementRoutes);
+app.use('/api/live-classes', liveClassRoutes);
 
 // Static uploads serving
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
