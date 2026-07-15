@@ -100,21 +100,21 @@ const Home = () => {
             <motion.span variants={fadeUp} className="inline-block text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-5 py-2 rounded-full mb-8">
               🚀 Pakistan's #1 Coding Platform
             </motion.span>
-            <motion.h1 variants={fadeUp} className="text-6xl md:text-8xl font-black text-[var(--text-main)] mb-8 leading-[1.05] tracking-tight">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl md:text-8xl font-black text-[var(--text-main)] mb-8 leading-[1.05] tracking-tight">
               Learn to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500">
                 Code
               </span>{' '}
               with CodeBuddy
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl mx-auto mb-12 leading-relaxed">
+            <motion.p variants={fadeUp} className="text-lg md:text-2xl text-[var(--text-muted)] max-w-3xl mx-auto mb-12 leading-relaxed">
               Free YouTube tutorials, premium courses, downloadable notes, and a thriving community — all in one place. Sikhein, Barhen, Kamayein! 🇵🇰
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Link to="/courses" className="px-10 py-5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xl font-bold rounded-2xl shadow-2xl shadow-indigo-500/30 transition-all hover:scale-105">
+              <Link to="/courses" className="px-6 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-lg sm:text-xl font-bold rounded-2xl shadow-2xl shadow-indigo-500/30 transition-all hover:scale-105">
                 Explore Courses
               </Link>
-              <Link to="/playlists" className="px-10 py-5 bg-[var(--card)] border-2 border-[var(--border)] hover:border-[var(--color-primary)] text-[var(--text-main)] text-xl font-bold rounded-2xl transition-all hover:scale-105">
+              <Link to="/playlists" className="px-6 py-4 sm:px-10 sm:py-5 bg-[var(--card)] border-2 border-[var(--border)] hover:border-[var(--color-primary)] text-[var(--text-main)] text-lg sm:text-xl font-bold rounded-2xl transition-all hover:scale-105">
                 🎬 Watch Free Playlists
               </Link>
             </motion.div>
@@ -140,12 +140,12 @@ const Home = () => {
       </section>
 
       {/* ─── FEATURED COURSES ─── */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-          <div className="flex justify-between items-end mb-14">
+          <div className="flex justify-between items-end mb-10 sm:mb-14">
             <div>
-              <span className="text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Premium Courses</span>
-              <h2 className="text-5xl font-black text-[var(--text-main)] mt-2">Bestselling Courses</h2>
+              <span className="text-sm sm:text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Premium Courses</span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[var(--text-main)] mt-2">Bestselling Courses</h2>
             </div>
             <Link to="/courses" className="hidden md:flex items-center gap-2 text-[var(--color-primary)] font-bold text-lg hover:underline">
               View All <ArrowRight className="w-5 h-5" />
@@ -205,17 +205,24 @@ const Home = () => {
               )}
             </div>
           )}
+          {courses.length > 0 && (
+            <div className="mt-8 text-center md:hidden">
+              <Link to="/courses" className="inline-flex items-center gap-2 text-[var(--color-primary)] font-bold text-base hover:underline">
+                View All Courses <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          )}
         </motion.div>
       </section>
 
       {/* ─── LATEST FREE TUTORIALS ─── */}
-      <section className="py-24 bg-[var(--card)] border-y border-[var(--border)]">
+      <section className="py-16 sm:py-24 bg-[var(--card)] border-y border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="flex justify-between items-end mb-14">
+            <div className="flex justify-between items-end mb-10 sm:mb-14">
               <div>
-                <span className="text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Free Tutorials</span>
-                <h2 className="text-5xl font-black text-[var(--text-main)] mt-2">Latest Free Coding Videos</h2>
+                <span className="text-sm sm:text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Free Tutorials</span>
+                <h2 className="text-3xl sm:text-5xl font-black text-[var(--text-main)] mt-2">Latest Free Coding Videos</h2>
               </div>
               <Link to="/playlists" className="hidden md:flex items-center gap-2 text-[var(--color-primary)] font-bold text-lg hover:underline">
                 View All <ArrowRight className="w-5 h-5" />
@@ -264,23 +271,30 @@ const Home = () => {
                 )}
               </div>
             )}
+            {tutorials.length > 0 && (
+              <div className="mt-8 text-center md:hidden">
+                <Link to="/playlists" className="inline-flex items-center gap-2 text-[var(--color-primary)] font-bold text-base hover:underline">
+                  View All Videos <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>
 
       {/* ─── CATEGORIES ─── */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-          <div className="text-center mb-14">
-            <span className="text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Topics</span>
-            <h2 className="text-5xl font-black text-[var(--text-main)] mt-2">Browse by Category</h2>
+          <div className="text-center mb-10 sm:mb-14">
+            <span className="text-sm sm:text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Topics</span>
+            <h2 className="text-3xl sm:text-5xl font-black text-[var(--text-main)] mt-2">Browse by Category</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
             {categories.map((cat, i) => (
               <motion.div key={i} variants={fadeUp}>
                 <Link
                   to={`/category/${cat.slug}`}
-                  className="relative flex flex-col items-center p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  className="relative flex flex-col items-center p-6 sm:p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 group cursor-pointer"
                   style={{ background: cat.bg, borderColor: `${cat.color}30` }}
                 >
                   {/* Coming Soon badge */}
@@ -302,12 +316,12 @@ const Home = () => {
       </section>
 
       {/* ─── STUDENT REVIEWS ─── */}
-      <section className="py-24 bg-[var(--card)] border-y border-[var(--border)]">
+      <section className="py-16 sm:py-24 bg-[var(--card)] border-y border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="text-center mb-14">
-              <span className="text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Testimonials</span>
-              <h2 className="text-5xl font-black text-[var(--text-main)] mt-2">What Our Students Say</h2>
+            <div className="text-center mb-10 sm:mb-14">
+              <span className="text-sm sm:text-base font-bold uppercase tracking-widest text-[var(--color-primary)]">Testimonials</span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[var(--text-main)] mt-2">What Our Students Say</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {reviews.map((r, i) => (
@@ -331,15 +345,15 @@ const Home = () => {
       </section>
 
       {/* ─── NEWSLETTER ─── */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <div className="bg-gradient-to-br from-indigo-600 via-purple-700 to-indigo-800 rounded-3xl p-16 text-center relative overflow-hidden shadow-2xl shadow-indigo-500/30">
+          <div className="bg-gradient-to-br from-indigo-600 via-purple-700 to-indigo-800 rounded-3xl p-6 sm:p-10 md:p-16 text-center relative overflow-hidden shadow-2xl shadow-indigo-500/30">
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2" />
             <div className="relative z-10">
-              <MessageSquare className="w-14 h-14 text-white/70 mx-auto mb-6" />
-              <h2 className="text-5xl font-black text-white mb-5">Stay in the Loop!</h2>
-              <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">Get notified about new courses, free tutorials, coding tips, and exclusive discounts straight to your inbox.</p>
+              <MessageSquare className="w-10 h-10 sm:w-14 sm:h-14 text-white/70 mx-auto mb-6" />
+              <h2 className="text-3xl sm:text-5xl font-black text-white mb-5">Stay in the Loop!</h2>
+              <p className="text-base sm:text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">Get notified about new courses, free tutorials, coding tips, and exclusive discounts straight to your inbox.</p>
               {newsletterSubscribed ? (
                 <div className="bg-white/10 border border-white/20 rounded-xl p-4 text-white text-center font-bold max-w-lg mx-auto">
                   🎉 Thank you for subscribing! We'll keep you updated.

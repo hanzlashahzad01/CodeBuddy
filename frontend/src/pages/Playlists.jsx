@@ -22,7 +22,7 @@ const Playlists = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-5xl font-extrabold text-[var(--color-text-main)] mb-8 text-center">Free Playlists</h1>
+      <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-text-main)] mb-8 text-center">Free Playlists</h1>
       
       {/* YouTube Channel Banner */}
       <div className="mb-12 bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-6 md:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-xl shadow-red-600/10">

@@ -33,8 +33,8 @@ const Tutorials = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-5xl font-extrabold text-[var(--text-main)] mb-4">Free YouTube Tutorials</h1>
-      <p className="text-xl text-[var(--text-muted)] mb-8 max-w-3xl">Access hundreds of free, high-quality coding tutorials directly from our YouTube channel.</p>
+      <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] mb-4">Free YouTube Tutorials</h1>
+      <p className="text-lg sm:text-xl text-[var(--text-muted)] mb-8 max-w-3xl">Access hundreds of free, high-quality coding tutorials directly from our YouTube channel.</p>
       
       {/* YouTube Channel Banner */}
       <div className="mb-12 bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-6 md:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-xl shadow-red-600/10">

@@ -23,7 +23,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[var(--bg)] px-4 transition-colors duration-300">
-      <div className="w-full max-w-md bg-[var(--card)] rounded-2xl shadow-2xl p-10 border border-[var(--border)]">
+      <div className="w-full max-w-md bg-[var(--card)] rounded-2xl shadow-2xl p-6 sm:p-10 border border-[var(--border)]">
         
         {!submitted ? (
           <>

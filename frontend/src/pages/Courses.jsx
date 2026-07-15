@@ -24,8 +24,8 @@ const Courses = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-5xl font-extrabold text-[var(--text-main)] mb-8">Premium Courses</h1>
-      <p className="text-xl text-[var(--text-muted)] mb-12 max-w-3xl">Take your skills to the next level with our in-depth, project-based premium courses.</p>
+      <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] mb-8">Premium Courses</h1>
+      <p className="text-lg sm:text-xl text-[var(--text-muted)] mb-12 max-w-3xl">Take your skills to the next level with our in-depth, project-based premium courses.</p>
       
       {loading ? (
         <p className="text-[var(--text-muted)] text-xl text-center">Loading premium courses...</p>

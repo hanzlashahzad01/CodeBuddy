@@ -790,9 +790,21 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="flex h-screen bg-[var(--bg)] overflow-hidden">
+    <div className="flex h-screen bg-[var(--bg)] overflow-hidden relative">
+      {/* Backdrop for Mobile */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity" 
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-[var(--card)] border-r border-[var(--border)] flex flex-col transition-all duration-300 ease-in-out flex-shrink-0`}>
+      <aside className={`
+        fixed inset-y-0 left-0 z-50 bg-[var(--card)] border-r border-[var(--border)] flex flex-col transition-all duration-300 ease-in-out flex-shrink-0
+        md:relative md:translate-x-0 md:z-auto md:h-screen
+        ${sidebarOpen ? 'w-64 translate-x-0' : 'w-64 -translate-x-full md:w-20 md:translate-x-0'}
+      `}>
         <div className={`flex items-center ${sidebarOpen ? 'justify-between' : 'justify-center'} p-5 border-b border-[var(--border)]`}>
           {sidebarOpen && (
             <div className="flex items-center gap-2">
@@ -834,6 +846,9 @@ const AdminDashboard = () => {
                 setVideoMode('list');
                 setNoteMode('list');
                 setBlogMode('list');
+                if (window.innerWidth < 768) {
+                  setSidebarOpen(false);
+                }
               }}
               className={`w-full flex items-center ${sidebarOpen ? 'gap-3 px-4' : 'justify-center px-2'} py-2.5 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer
                 ${activeTab === id
@@ -850,7 +865,12 @@ const AdminDashboard = () => {
 
         <div className="p-3 border-t border-[var(--border)]">
           <button
-            onClick={handleLogout}
+            onClick={() => {
+              handleLogout();
+              if (window.innerWidth < 768) {
+                setSidebarOpen(false);
+              }
+            }}
             className={`w-full flex items-center ${sidebarOpen ? 'gap-3 px-4' : 'justify-center px-2'} py-3 rounded-xl text-red-500 hover:bg-red-500/10 font-semibold transition-colors cursor-pointer`}
           >
             <LogOut className="w-5 h-5 flex-shrink-0" />
@@ -860,10 +880,18 @@ const AdminDashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
         {/* Top Bar */}
         <header className="h-16 bg-[var(--card)] border-b border-[var(--border)] flex items-center justify-between px-6 flex-shrink-0">
-          <h1 className="text-xl font-extrabold text-[var(--text-main)] capitalize">{activeTab}</h1>
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="p-1.5 -ml-1 rounded-lg hover:bg-[var(--bg)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors md:hidden"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+            <h1 className="text-xl font-extrabold text-[var(--text-main)] capitalize">{activeTab}</h1>
+          </div>
           <div className="flex items-center gap-4">
             <Link to="/" className="text-sm text-[var(--text-muted)] hover:text-[var(--color-primary)] font-semibold transition-colors">
               ← View Site

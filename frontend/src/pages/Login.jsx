@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[var(--bg)] px-4 transition-colors duration-300">
-      <div className="w-full max-w-lg bg-[var(--card)] rounded-2xl shadow-2xl p-10 border border-[var(--border)] transition-colors duration-300">
+      <div className="w-full max-w-lg bg-[var(--card)] rounded-2xl shadow-2xl p-6 sm:p-10 border border-[var(--border)] transition-colors duration-300">
         <h2 className="text-4xl font-extrabold text-center text-[var(--text-main)] mb-3">Welcome Back</h2>
         <p className="text-center text-lg text-[var(--text-muted)] mb-8">Sign in to continue your learning journey.</p>
         
