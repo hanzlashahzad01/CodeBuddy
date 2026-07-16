@@ -60,8 +60,15 @@ const Courses = () => {
                   <p className="text-[var(--text-muted)] mb-6 font-medium line-clamp-2 flex-grow">{course.description}</p>
                   
                   <div className="flex justify-between items-center border-t border-[var(--border)] pt-6 mt-auto">
-                    <span className="text-3xl font-extrabold text-[var(--text-main)]">{priceLabel}</span>
-                    <Link to={`/courses/${course._id}`} className="px-6 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold rounded-lg transition-colors">
+                    <div>
+                      {course.discount > 0 && (
+                        <span className="text-sm text-[var(--text-muted)] line-through mr-2">₹{course.price}</span>
+                      )}
+                      <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)]">
+                        {course.discount > 0 ? `₹${Math.round(course.price * (1 - course.discount / 100))}` : priceLabel}
+                      </span>
+                    </div>
+                    <Link to={`/courses/${course._id}`} className="px-4 sm:px-6 py-2 sm:py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold rounded-lg transition-colors text-sm sm:text-base">
                       View Details
                     </Link>
                   </div>

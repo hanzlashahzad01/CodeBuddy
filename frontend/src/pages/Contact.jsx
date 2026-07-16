@@ -34,106 +34,106 @@ const Contact = () => {
   return (
     <div className="bg-[var(--bg)] transition-colors duration-300">
       {/* Hero */}
-      <section className="py-14 sm:py-24 text-center relative overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-10 sm:py-14 md:py-24 text-center relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4">
-          <motion.span initial="hidden" animate="visible" variants={fadeUp} className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-4 py-2 rounded-full mb-6">Get in Touch</motion.span>
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl sm:text-6xl md:text-7xl font-black text-[var(--text-main)] mb-5">Contact Us</motion.h1>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-base sm:text-xl text-[var(--text-muted)] max-w-xl mx-auto">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</motion.p>
+          <motion.span initial="hidden" animate="visible" variants={fadeUp} className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-primary)]/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6">Get in Touch</motion.span>
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-[var(--text-main)] mb-3 sm:mb-5">Contact Us</motion.h1>
+          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-sm sm:text-base md:text-xl text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="pb-12 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
+      <section className="pb-10 sm:pb-12 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12">
           {/* Contact Info */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-2 space-y-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="lg:col-span-2 space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-3xl font-black text-[var(--text-main)] mb-6">Let's Connect</h2>
-              <p className="text-lg text-[var(--text-muted)] leading-relaxed">We're here to help! Reach out to us through any of these channels and we'll get back to you within 24 hours.</p>
+              <h2 className="text-2xl sm:text-3xl font-black text-[var(--text-main)] mb-4 sm:mb-6">Let's Connect</h2>
+              <p className="text-base sm:text-lg text-[var(--text-muted)] leading-relaxed">We're here to help! Reach out to us through any of these channels and we'll get back to you within 24 hours.</p>
             </div>
             {[
-              { icon: <Mail className="w-6 h-6" />, label: 'Email', value: 'codebuddy166@gmail.com', href: 'mailto:codebuddy166@gmail.com', color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
-              { icon: <FaWhatsapp className="w-6 h-6" />, label: 'WhatsApp', value: '03287299206', href: 'https://wa.me/923287299206?text=Assist%20me', color: 'text-green-500', bg: 'bg-green-500/10' },
-              { icon: <MapPin className="w-6 h-6" />, label: 'Location', value: 'Lahore, Pakistan 🇵🇰', href: null, color: 'text-red-500', bg: 'bg-red-500/10' },
+              { icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />, label: 'Email', value: 'codebuddy166@gmail.com', href: 'mailto:codebuddy166@gmail.com', color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
+              { icon: <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />, label: 'WhatsApp', value: '03287299206', href: 'https://wa.me/923287299206?text=Assist%20me', color: 'text-green-500', bg: 'bg-green-500/10' },
+              { icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />, label: 'Location', value: 'Lahore, Pakistan 🇵🇰', href: null, color: 'text-red-500', bg: 'bg-red-500/10' },
             ].map((item, i) => {
               const content = (
                 <>
-                  <div className={`w-14 h-14 ${item.bg} ${item.color} rounded-xl flex items-center justify-center flex-shrink-0`}>{item.icon}</div>
-                  <div>
-                    <p className="text-sm font-bold text-[var(--text-muted)] uppercase tracking-wide">{item.label}</p>
-                    <p className="text-lg font-bold text-[var(--text-main)] mt-1">{item.value}</p>
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 ${item.bg} ${item.color} rounded-xl flex items-center justify-center flex-shrink-0`}>{item.icon}</div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm font-bold text-[var(--text-muted)] uppercase tracking-wide">{item.label}</p>
+                    <p className="text-sm sm:text-base md:text-lg font-bold text-[var(--text-main)] mt-1 break-words">{item.value}</p>
                   </div>
                 </>
               );
               return item.href ? (
-                <a key={i} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="flex items-center gap-5 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 hover:border-[var(--color-primary)] hover:shadow-lg transition-all duration-300">
+                <a key={i} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="flex items-center gap-3 sm:gap-5 bg-[var(--card)] border border-[var(--border)] rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[var(--color-primary)] hover:shadow-lg transition-all duration-300">
                   {content}
                 </a>
               ) : (
-                <div key={i} className="flex items-center gap-5 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6">
+                <div key={i} className="flex items-center gap-3 sm:gap-5 bg-[var(--card)] border border-[var(--border)] rounded-xl sm:rounded-2xl p-4 sm:p-6">
                   {content}
                 </div>
               );
             })}
 
-            <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
-              <p className="text-base font-bold text-[var(--text-muted)] uppercase tracking-wide">Follow Us</p>
-              <div className="flex flex-col gap-4">
-                <a href="http://www.youtube.com/@CodeBuddy166" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-[var(--text-main)] hover:text-red-500 font-bold transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center group-hover:scale-105 transition-transform"><FaYoutube className="w-5 h-5" /></div>
-                  <span>Visit YouTube Channel</span>
+            <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl sm:rounded-2xl p-4 sm:p-6 space-y-3 sm:space-y-4">
+              <p className="text-sm sm:text-base font-bold text-[var(--text-muted)] uppercase tracking-wide">Follow Us</p>
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <a href="http://www.youtube.com/@CodeBuddy166" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] hover:text-red-500 font-bold transition-all group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center group-hover:scale-105 transition-transform"><FaYoutube className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                  <span className="text-sm sm:text-base">Visit YouTube Channel</span>
                 </a>
-                <a href="https://github.com/hanzlashahzad01/hanzlashahzad01" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-[var(--text-main)] hover:text-[var(--color-primary)] font-bold transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-500/10 text-[var(--text-main)] flex items-center justify-center group-hover:scale-105 transition-transform"><FaGithub className="w-5 h-5" /></div>
-                  <span>Visit GitHub Profile</span>
+                <a href="https://github.com/hanzlashahzad01/hanzlashahzad01" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] hover:text-[var(--color-primary)] font-bold transition-all group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-500/10 text-[var(--text-main)] flex items-center justify-center group-hover:scale-105 transition-transform"><FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                  <span className="text-sm sm:text-base">Visit GitHub Profile</span>
                 </a>
-                <a href="https://wa.me/923287299206?text=Assist%20me" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-[var(--text-main)] hover:text-green-500 font-bold transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center group-hover:scale-105 transition-transform"><FaWhatsapp className="w-5 h-5" /></div>
-                  <span>Chat on WhatsApp</span>
+                <a href="https://wa.me/923287299206?text=Assist%20me" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] hover:text-green-500 font-bold transition-all group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center group-hover:scale-105 transition-transform"><FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                  <span className="text-sm sm:text-base">Chat on WhatsApp</span>
                 </a>
               </div>
             </div>
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-3">
-            <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="lg:col-span-3">
+            <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-xl">
               <AnimatePresence mode="wait">
                 {submitted ? (
-                  <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-12">
-                    <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-                    <h3 className="text-3xl font-black text-[var(--text-main)] mb-3">Message Sent!</h3>
-                    <p className="text-lg text-[var(--text-muted)] mb-8">We'll get back to you within 24 hours. Shukria! 🙏</p>
-                    <button onClick={() => setSubmitted(false)} className="px-8 py-3 bg-[var(--color-primary)] text-white font-bold rounded-xl hover:bg-[var(--color-primary-hover)] transition-colors">Send Another Message</button>
+                  <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8 sm:py-12">
+                    <CheckCircle className="w-16 h-16 sm:w-20 sm:h-20 text-green-500 mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-2xl sm:text-3xl font-black text-[var(--text-main)] mb-2 sm:mb-3">Message Sent!</h3>
+                    <p className="text-base sm:text-lg text-[var(--text-muted)] mb-6 sm:mb-8">We'll get back to you within 24 hours. Shukria! 🙏</p>
+                    <button onClick={() => setSubmitted(false)} className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[var(--color-primary)] text-white font-bold rounded-xl hover:bg-[var(--color-primary-hover)] transition-colors text-sm sm:text-base">Send Another Message</button>
                   </motion.div>
                 ) : (
-                  <motion.form key="form" onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    <h3 className="text-3xl font-black text-[var(--text-main)] mb-2">Send a Message</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <motion.form key="form" onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                    <h3 className="text-2xl sm:text-3xl font-black text-[var(--text-main)] mb-2">Send a Message</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div>
-                        <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Full Name</label>
-                        <input {...register('name')} className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="John Doe" />
-                        {errors.name && <p className="text-red-500 text-sm mt-1 font-medium">{errors.name.message}</p>}
+                        <label className="block text-sm sm:text-base font-semibold text-[var(--text-muted)] mb-2">Full Name</label>
+                        <input {...register('name')} className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-base sm:text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="John Doe" />
+                        {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-1 font-medium">{errors.name.message}</p>}
                       </div>
                       <div>
-                        <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Email Address</label>
-                        <input {...register('email')} type="email" className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="john@example.com" />
-                        {errors.email && <p className="text-red-500 text-sm mt-1 font-medium">{errors.email.message}</p>}
+                        <label className="block text-sm sm:text-base font-semibold text-[var(--text-muted)] mb-2">Email Address</label>
+                        <input {...register('email')} type="email" className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-base sm:text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="john@example.com" />
+                        {errors.email && <p className="text-red-500 text-xs sm:text-sm mt-1 font-medium">{errors.email.message}</p>}
                       </div>
                     </div>
                     <div>
-                      <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Subject</label>
-                      <input {...register('subject')} className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="How can we help?" />
-                      {errors.subject && <p className="text-red-500 text-sm mt-1 font-medium">{errors.subject.message}</p>}
+                      <label className="block text-sm sm:text-base font-semibold text-[var(--text-muted)] mb-2">Subject</label>
+                      <input {...register('subject')} className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-base sm:text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all" placeholder="How can we help?" />
+                      {errors.subject && <p className="text-red-500 text-xs sm:text-sm mt-1 font-medium">{errors.subject.message}</p>}
                     </div>
                     <div>
-                      <label className="block text-base font-semibold text-[var(--text-muted)] mb-2">Message</label>
-                      <textarea {...register('message')} rows={6} className="w-full px-5 py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all resize-none" placeholder="Write your message here..." />
-                      {errors.message && <p className="text-red-500 text-sm mt-1 font-medium">{errors.message.message}</p>}
+                      <label className="block text-sm sm:text-base font-semibold text-[var(--text-muted)] mb-2">Message</label>
+                      <textarea {...register('message')} rows={5} className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text-main)] text-base sm:text-lg focus:outline-none focus:border-[var(--color-primary)] transition-all resize-none" placeholder="Write your message here..." />
+                      {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-1 font-medium">{errors.message.message}</p>}
                     </div>
-                    <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-lg font-bold rounded-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50">
-                      <Send className="w-5 h-5" /> {isSubmitting ? 'Sending...' : 'Send Message'}
+                    <button type="submit" disabled={isSubmitting} className="w-full py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-base sm:text-lg font-bold rounded-xl transition-all flex items-center justify-center gap-2 sm:gap-3 disabled:opacity-50">
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" /> {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </motion.form>
                 )}

@@ -24,8 +24,11 @@ import PlaylistDetail from './pages/PlaylistDetail';
 import CourseDetail from './pages/CourseDetail';
 import Checkout from './pages/Checkout';
 import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import Roadmap from './pages/Roadmap';
 import Sandbox from './pages/Sandbox';
+import VerifyCertificate from './pages/VerifyCertificate';
+import Wishlist from './pages/Wishlist';
 
 // Dashboards
 import StudentDashboard from './pages/dashboard/StudentDashboard';
@@ -79,6 +82,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:resettoken" element={<ResetPassword />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
@@ -89,6 +93,8 @@ function App() {
           <Route path="/category/:slug" element={<CategoryPage />} />
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/sandbox" element={<Sandbox />} />
+          <Route path="/verify-certificate" element={<VerifyCertificate />} />
+          <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

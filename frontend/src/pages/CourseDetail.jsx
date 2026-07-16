@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { PlayCircle, CheckCircle, Clock } from 'lucide-react';
 import CommentSection from '../components/CommentSection';
+import ReviewSection from '../components/ReviewSection';
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -112,6 +113,9 @@ const CourseDetail = () => {
 
           {/* Comments section */}
           <CommentSection refType="course" refId={course._id} />
+          
+          {/* Reviews section */}
+          <ReviewSection courseId={course._id} />
         </div>
       </div>
     </div>

@@ -55,6 +55,9 @@ const commentRoutes  = require('./routes/commentRoutes');
 const quizRoutes     = require('./routes/quizRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const liveClassRoutes = require('./routes/liveClassRoutes');
+const certificateRoutes = require('./routes/certificateRoutes');
+const wishlistRoutes = require('./routes/wishlistRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 
 // Mount routers
 app.use('/api/auth',      auth);
@@ -77,6 +80,9 @@ app.use('/api/comments',  commentRoutes);
 app.use('/api/quizzes',   quizRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/live-classes', liveClassRoutes);
+app.use('/api/certificates', certificateRoutes);
+app.use('/api/wishlist', wishlistRoutes);
+app.use('/api/newsletter', newsletterRoutes);
 
 // Static uploads serving
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));

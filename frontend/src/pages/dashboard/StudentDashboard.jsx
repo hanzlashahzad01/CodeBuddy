@@ -6,7 +6,7 @@ import {
   BookOpen, Award, Heart, User as UserIcon,
   PlayCircle, LogOut, Settings, ChevronRight,
   Clock, Star, CheckCircle2, Menu, X, Code, Play,
-  Megaphone, Video, Share2, Copy, Check
+  Megaphone, Video, Share2, Copy, Check, BarChart3
 } from 'lucide-react';
 import { logout, reset } from '../../features/auth/authSlice';
 
@@ -104,6 +104,7 @@ const StudentDashboard = () => {
     { id: 'courses', label: 'Premium Courses', icon: PlayCircle },
     { id: 'playlists', label: 'My Progress', icon: Play },
     { id: 'live', label: 'Live Webinars', icon: Video },
+    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'certificates', label: 'Certificates', icon: Award },
     { id: 'profile', label: 'Profile Settings', icon: Settings },
   ];
@@ -481,7 +482,123 @@ const StudentDashboard = () => {
                 </div>
               )}
 
-              {/* ── TAB 5: CERTIFICATES TAB ── */}
+              {/* ── TAB 5: ANALYTICS TAB ── */}
+              {activeTab === 'analytics' && (
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-extrabold text-[var(--color-text-main)]">Learning Analytics</h2>
+                  
+                  {/* Stats Overview */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {[
+                      { 
+                        label: 'Total Courses', 
+                        value: enrolledCourses.length, 
+                        icon: BookOpen, 
+                        color: 'text-blue-500',
+                        bg: 'bg-blue-500/10'
+                      },
+                      { 
+                        label: 'Playlists Started', 
+                        value: playlistsProgress.length, 
+                        icon: Play, 
+                        color: 'text-indigo-500',
+                        bg: 'bg-indigo-500/10'
+                      },
+                      { 
+                        label: 'Certificates Earned', 
+                        value: totalCertificates, 
+                        icon: Award, 
+                        color: 'text-emerald-500',
+                        bg: 'bg-emerald-500/10'
+                      },
+                      { 
+                        label: 'Avg Progress', 
+                        value: playlistsProgress.length > 0 
+                          ? `${Math.round(playlistsProgress.reduce((sum, p) => sum + p.percentComplete, 0) / playlistsProgress.length)}%`
+                          : '0%',
+                        icon: BarChart3, 
+                        color: 'text-purple-500',
+                        bg: 'bg-purple-500/10'
+                      },
+                    ].map(({ label, value, icon: Icon, color, bg }) => (
+                      <div key={label} className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div className={`w-12 h-12 ${bg} rounded-xl flex items-center justify-center mb-4`}>
+                          <Icon className={`w-6 h-6 ${color}`} />
+                        </div>
+                        <div className="text-3xl font-black text-[var(--color-text-main)] mb-1">{value}</div>
+                        <div className="text-sm text-[var(--color-text-muted)] font-semibold">{label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Progress Breakdown */}
+                  <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-sm">
+                    <h3 className="text-lg font-bold text-[var(--color-text-main)] mb-4">Playlist Progress Breakdown</h3>
+                    {playlistsProgress.length === 0 ? (
+                      <p className="text-[var(--color-text-muted)] text-center py-8">No playlist data available yet.</p>
+                    ) : (
+                      <div className="space-y-4">
+                        {playlistsProgress.map(({ playlist: pl, percentComplete, watchedCount }) => (
+                          <div key={pl._id} className="space-y-2">
+                            <div className="flex justify-between items-center text-sm">
+                              <span className="font-semibold text-[var(--color-text-main)] truncate flex-1 mr-4">{pl.title}</span>
+                              <span className="text-[var(--color-primary)] font-bold whitespace-nowrap">{percentComplete}%</span>
+                            </div>
+                            <div className="w-full h-3 bg-[var(--color-bg)] rounded-full overflow-hidden border border-[var(--color-border)]">
+                              <div 
+                                className={`h-full rounded-full transition-all duration-500 ${
+                                  percentComplete === 100 ? 'bg-emerald-500' :
+                                  percentComplete >= 50 ? 'bg-blue-500' :
+                                  percentComplete >= 25 ? 'bg-yellow-500' :
+                                  'bg-red-500'
+                                }`}
+                                style={{ width: `${percentComplete}%` }}
+                              />
+                            </div>
+                            <div className="flex justify-between text-xs text-[var(--color-text-muted)]">
+                              <span>{watchedCount} of {pl.videoCount || pl.videos?.length || 0} videos watched</span>
+                              <span>
+                                {percentComplete === 100 ? '✅ Completed' :
+                                 percentComplete >= 75 ? '🔥 Almost done' :
+                                 percentComplete >= 50 ? '👍 Halfway' :
+                                 percentComplete >= 25 ? '📈 In progress' :
+                                 '🎯 Just started'}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Learning Activity */}
+                  <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-sm">
+                    <h3 className="text-lg font-bold text-[var(--color-text-main)] mb-4">Learning Activity</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-4 text-center">
+                        <div className="text-2xl font-black text-[var(--color-primary)] mb-1">
+                          {playlistsProgress.reduce((sum, p) => sum + p.watchedCount, 0)}
+                        </div>
+                        <div className="text-xs text-[var(--color-text-muted)] font-semibold">Total Videos Watched</div>
+                      </div>
+                      <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-4 text-center">
+                        <div className="text-2xl font-black text-[var(--color-primary)] mb-1">
+                          {playlistsProgress.filter(p => p.percentComplete >= 50).length}
+                        </div>
+                        <div className="text-xs text-[var(--color-text-muted)] font-semibold">Halfway+ Completed</div>
+                      </div>
+                      <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-4 text-center">
+                        <div className="text-2xl font-black text-[var(--color-primary)] mb-1">
+                          {playlistsProgress.filter(p => p.percentComplete === 100).length}
+                        </div>
+                        <div className="text-xs text-[var(--color-text-muted)] font-semibold">Fully Completed</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ── TAB 6: CERTIFICATES TAB ── */}
               {activeTab === 'certificates' && (
                 <div className="space-y-6">
                   <h2 className="text-3xl font-extrabold text-[var(--color-text-main)]">My Certificates</h2>

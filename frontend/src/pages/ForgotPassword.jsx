@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Link } from 'react-router-dom';
 import { Mail, ArrowLeft, CheckCircle } from 'lucide-react';
+import axios from 'axios';
 
 const schema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address' }),
@@ -11,14 +12,19 @@ const schema = z.object({
 
 const ForgotPassword = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data) => {
-    // Simulate API call
-    await new Promise(r => setTimeout(r, 1200));
-    setSubmitted(true);
+    try {
+      setError('');
+      await axios.post('/api/auth/forgotpassword', data);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to send reset email. Please try again.');
+    }
   };
 
   return (
@@ -32,8 +38,10 @@ const ForgotPassword = () => {
             </div>
             <h2 className="text-4xl font-extrabold text-center text-[var(--text-main)] mb-3">Forgot Password?</h2>
             <p className="text-center text-lg text-[var(--text-muted)] mb-8">
-              No worries! Enter your email and we'll send you a reset link.
+              No worries! Enter your email and we'll send you a new password.
             </p>
+
+            {error && <div className="bg-red-500/10 border border-red-500 text-red-500 p-4 rounded-lg mb-6 text-center font-medium">{error}</div>}
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
@@ -52,7 +60,7 @@ const ForgotPassword = () => {
                 disabled={isSubmitting}
                 className="w-full py-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-lg font-bold rounded-xl transition-all disabled:opacity-50"
               >
-                {isSubmitting ? 'Sending...' : 'Send Reset Link'}
+                {isSubmitting ? 'Sending...' : 'Send New Password'}
               </button>
             </form>
           </>
@@ -63,7 +71,7 @@ const ForgotPassword = () => {
             </div>
             <h2 className="text-3xl font-extrabold text-[var(--text-main)] mb-4">Check Your Email!</h2>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed">
-              We've sent a password reset link to your email address. Please check your inbox and spam folder.
+              We've sent a new password to your email address. Please check your inbox and spam folder, then login with the new password.
             </p>
           </div>
         )}

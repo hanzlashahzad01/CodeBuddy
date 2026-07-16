@@ -58,12 +58,17 @@ const Home = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
     if (newsletterEmail.trim()) {
-      setNewsletterSubscribed(true);
-      setNewsletterEmail('');
-      setTimeout(() => setNewsletterSubscribed(false), 5000);
+      try {
+        await axios.post('/api/newsletter/subscribe', { email: newsletterEmail });
+        setNewsletterSubscribed(true);
+        setNewsletterEmail('');
+        setTimeout(() => setNewsletterSubscribed(false), 5000);
+      } catch (error) {
+        alert(error.response?.data?.error || 'Failed to subscribe. Please try again.');
+      }
     }
   };
 

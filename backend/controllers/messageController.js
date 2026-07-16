@@ -1,4 +1,5 @@
 const Message = require('../models/Message');
+const { sendContactNotification } = require('../utils/emailHelper');
 
 // @desc    Submit a contact form message (public)
 // @route   POST /api/messages
@@ -8,6 +9,9 @@ exports.submitMessage = async (req, res) => {
     const { name, email, subject, message } = req.body;
 
     const newMessage = await Message.create({ name, email, subject, message });
+
+    // Send email notification to admin
+    sendContactNotification(name, email, subject, message);
 
     res.status(201).json({
       success: true,

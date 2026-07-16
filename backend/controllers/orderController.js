@@ -2,6 +2,7 @@ const Order = require('../models/Order');
 const Course = require('../models/Course');
 const User = require('../models/User');
 const Coupon = require('../models/Coupon');
+const { sendEnrollmentEmail } = require('../utils/emailHelper');
 
 // @desc    Create new order (student only)
 // @route   POST /api/orders
@@ -45,6 +46,9 @@ exports.createOrder = async (req, res) => {
         { $addToSet: { purchasedCourses: courseId } },
         { new: true }
       );
+      
+      // Send enrollment email
+      sendEnrollmentEmail(req.user.email, req.user.name, course.title);
       
       // If this is their first course purchase, reward the referrer
       if (updatedUser.purchasedCourses.length === 1 && updatedUser.referredBy) {
@@ -138,6 +142,12 @@ exports.updateOrderStatus = async (req, res) => {
         { $addToSet: { purchasedCourses: order.course } },
         { new: true }
       );
+      
+      // Get course details for email
+      const course = await Course.findById(order.course);
+      
+      // Send enrollment email
+      sendEnrollmentEmail(updatedUser.email, updatedUser.name, course.title);
       
       // If this is their first course purchase, reward the referrer
       if (updatedUser.purchasedCourses.length === 1 && updatedUser.referredBy) {
